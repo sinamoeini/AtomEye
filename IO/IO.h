@@ -1363,7 +1363,7 @@ char *readline_gets (char *prompt, char *default_answer);
 /* Return a list of "numerically similar" filenames to "seed_fname" */
 /* and sort them; return 0 if no digits are found in "seed_fname".  */
 /* Remember to free dynamical memory later using globfree(glob_t*). */
-int numerically_sorted_glob (char *seed_fname, glob_t *globbuf);
+size_t numerically_sorted_glob (char *seed_fname, glob_t *globbuf);
 
 /* Find the fname that is numerically similar to "start_fname" */
 /* but is "glob_advance" down the list */

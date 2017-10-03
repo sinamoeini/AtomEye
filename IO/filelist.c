@@ -14,7 +14,7 @@
 /* Return a list of "numerically similar" filenames to "seed_fname" */
 /* and sort them; return 0 if no digits are found in "seed_fname".  */
 /* Remember to free dynamical memory later using globfree(glob_t*). */
-int numerically_sorted_glob (char *seed_fname, glob_t *globbuf)
+size_t numerically_sorted_glob (char *seed_fname, glob_t *globbuf)
 {
     int i,j;
     char *p,*q,*suffix,*prefix,*pattern;
@@ -83,10 +83,9 @@ char *numerically_sorted_glob_advance
 /* memory efficient implementation */
 char *Numerically_sorted_glob_advance (char *fname, int glob_advance)
 {
-    int i;
     glob_t globbuf;
-    i = numerically_sorted_glob (fname, &globbuf);
-    if (i <= 0)
+    size_t i = numerically_sorted_glob (fname, &globbuf);
+    if (i == 0)
     {
         /* pe ("Numerically_sorted_glob_advance: \n" */
         /* "glob list is not well defined.\n"); */
@@ -102,10 +101,9 @@ char *Numerically_sorted_glob_advance (char *fname, int glob_advance)
 /* seek the first in the similarity family */
 char *Numerically_sorted_glob_first (char *fname)
 {
-    int i;
     glob_t globbuf;
-    i = numerically_sorted_glob(fname, &globbuf);
-    if (i <= 0)
+    size_t i = numerically_sorted_glob(fname, &globbuf);
+    if (i == 0)
     {
         /* pe ("Numerically_sorted_glob_first: \n" */
         /* "glob list is not well defined.\n"); */
@@ -120,10 +118,9 @@ char *Numerically_sorted_glob_first (char *fname)
 /* seek the last in the similarity family */
 char *Numerically_sorted_glob_last (char *fname)
 {
-    int i;
     glob_t globbuf;
-    i = numerically_sorted_glob(fname, &globbuf);
-    if (i <= 0)
+    size_t i = numerically_sorted_glob(fname, &globbuf);
+    if (i == 0)
     {
         /* pe ("Numerically_sorted_glob_last: \n" */
         /* "glob list is not well defined.\n"); */
