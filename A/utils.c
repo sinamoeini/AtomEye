@@ -819,7 +819,7 @@ bool change_auxiliary_colormap (int iw)
 
 void save_auxiliary_colormap (int iw, char *default_cmap_fname)
 {
-    int i=0,j;
+    size_t i=0,j;
     char fname[MAX_FILENAME_SIZE],buf[4][TERMSIZE];
     double x,r,g,b,grade,width,height;
     FILE *fp;
