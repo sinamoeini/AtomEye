@@ -76,7 +76,7 @@ void ChainofStates_Load (char *GlobPattern, FILE *info, int flags,
         if (i == 0)
         {
             c->checksum = ConfigChecksum(Config_Alib_to_Alib);
-            c->N = globbuf.gl_pathc;
+            c->N = (int)globbuf.gl_pathc;
             REALLOC( ChainofStates_Load, c->H, 9*c->N, double );
             REALLOC( ChainofStates_Load, c->s, 3*(*np)*c->N, double );
             if (flags | CHAIN_OF_STATES_NO_VELOCITY)
