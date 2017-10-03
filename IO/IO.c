@@ -242,8 +242,8 @@ char *convert_to_lowercase (char *s)
 /* Similar as UNIX tr: translate characters in s[] from set1 to set2 */
 char *convert_tr (char *s, char *set1, char *set2)
 {
-    register int i, j;
-    int len = strlen(set1);
+    register size_t i, j;
+    size_t len = strlen(set1);
     if (len != strlen(set2))
         pe ("set1 \"%s\" is not equal in length as set2 \"%s\"\n",
             set1, set2);
@@ -422,7 +422,7 @@ int main (int argc, char *argv[])
 /* pointer at that last occurrence; otherwise return NULL.  */
 char *str_end_with (char *haystack, char *needle)
 {
-    int i,j;
+    size_t i,j;
     i = strlen(haystack);
     j = strlen(needle);
     if (i<j) return(NULL);
@@ -434,7 +434,7 @@ char *str_end_with (char *haystack, char *needle)
 /* Same as str_end_with() except there is no distinction in case */
 char *str_caseend_with (char *haystack, char *needle)
 {
-    int i,j;
+    size_t i,j;
     i = strlen(haystack);
     j = strlen(needle);
     if (i<j) return(NULL);
