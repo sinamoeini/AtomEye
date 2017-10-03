@@ -1,8 +1,0 @@
-#!/bin/csh
-
-./cleanup
-
-rm -rf Src.tar.gz
-cd ..
-tar cvfz Src.tar.gz Src
-mv Src.tar.gz Src

@@ -1,8 +1,0 @@
-1. From http://www.engr.ncsu.edu/mat/CompMatSci/projects.html
-   get MD.tar.Z
-
-2. untar it
-
-3. mkdir ~/Brenner/Dat/
-
-4. cp MD/InOut/input.d MD/Spline/*.d ~/Brenner/Dat/

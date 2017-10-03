@@ -1,9 +1,0 @@
-#!/bin/csh
-
-foreach dir ( * )
- if ( -d $dir ) then
-  cd $dir
-  make clean
-  cd ..
- endif
-end

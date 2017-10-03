@@ -1,5 +1,0 @@
-*shared*
-
-# Python interface to Brenner molecular dynamics api
-
-_brenner _brennermodule.c -I../ -L../ -lbrenner
