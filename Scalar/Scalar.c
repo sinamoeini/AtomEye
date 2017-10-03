@@ -81,8 +81,9 @@ int main (int argc, char *argv[])
 /* set Bitmap "b", starting from the bit "offset", every "period" */
 /* bits to the lowest "period" bits of "value", for "n" periods.  */
 /******************************************************************/
-Bmap *Bperiod (Bmap *b, int offset, int n, int period, int value)
+Bmap *Bperiod (Bmap *b, int offset, int n, int __period, int value)
 {
+    long period=(long)__period;
     /* Use type long int as chunk carrier, which has LONG_IN_BITS bits */
     /* therefore the period repeats in LCM(period,LONG_IN_BITS) bits,  */
     /* and is commensurate with array of long ints. Since period <=    */
@@ -90,11 +91,12 @@ Bmap *Bperiod (Bmap *b, int offset, int n, int period, int value)
     /* which means the long int array needs most INT_IN_BITS elements. */
     static long pattern[INT_IN_BITS];
     long *start;
-    int i, j, k, m, h, longperiod, num_longperiods;
+    int i, j, k, m, h;
+    long longperiod, num_longperiods;
     if (period > INT_IN_BITS)
     {
-	printf ("error: Bperiod: period = %d > %d bits of int,\n"
-		"use BPERIOD() instead.\n", period, (int)INT_IN_BITS);
+	printf ("error: Bperiod: period = %ld > %ld bits of int,\n"
+		"use BPERIOD() instead.\n", period,INT_IN_BITS);
 	exit(1);
     }
     i = offset;  /* bit index in b */

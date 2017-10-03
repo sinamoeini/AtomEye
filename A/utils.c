@@ -1036,7 +1036,6 @@ bool atom_color_change (int iw, int i, bool invisible)
 
 bool normal_color_change (int iw, int t, bool invisible)
 {
-    register int i;
     int items;
     double c[4];
     char question[MAX_FILENAME_SIZE],danswer[MAX_FILENAME_SIZE],*answer;
@@ -1089,7 +1088,6 @@ bool normal_color_change (int iw, int t, bool invisible)
 
 bool assign_original_normal_color (int iw)
 {
-    register int i;
     memcpy(Dmitri, MENDELEYEV, (MENDELEYEV_MAX+1)*sizeof(struct Mendeleyev));
     if ((n[iw].xtal_mode) && (n[iw].color_mode == COLOR_MODE_COORD))
     {
