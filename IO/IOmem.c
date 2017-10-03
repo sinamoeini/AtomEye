@@ -154,7 +154,11 @@ char *IOclone (char *str)
 #define TRIALS  1000000
 #define CHARS   IOMEM_UNIT
 #define TIMES   IOMEM_SEGS/2
+#ifdef ATOMEYEDEBUG
+#include "../Timer/Timer.h"
+#else
 #include <Timer.h>
+#endif
 void main()
 {
     int i, j;

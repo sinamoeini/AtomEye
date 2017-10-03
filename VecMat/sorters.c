@@ -623,7 +623,11 @@ void msort_Ju (int N,  double x[], int idx[], int option)
 /* Fastest double array index sort subroutine contest */
 /******************************************************/
 #ifdef _sortersContest_TEST
+#ifdef ATOMEYEDEBUG
+#include "../Timer/Timer.h"
+#else
 #include <Timer.h>
+#endif
 #define N 1000001
 void main()
 {

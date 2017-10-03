@@ -12,7 +12,11 @@
 
 #include <math.h>
 #include <time.h>
+#ifdef ATOMEYEDEBUG
+#include "../IO/IO.h"
+#else
 #include <IO.h>
+#endif
 #include <gsl/gsl_errno.h>
 #include <gsl/gsl_spline.h>
 

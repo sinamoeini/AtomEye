@@ -525,7 +525,11 @@ int Is_nondecreasing (int N, int x[], int idx[])
 /* Fastest int array index sort subroutine contest */
 /***************************************************/
 #ifdef _IsortersContest_TEST
+#ifdef ATOMEYEDEBUG
+#include "../Timer/Timer.h"
+#else
 #include <Timer.h>
+#endif
 #define N 1000001
 int main()
 {

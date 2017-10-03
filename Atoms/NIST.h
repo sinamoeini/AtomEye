@@ -11,8 +11,11 @@
 #ifndef _NIST_h
 #define _NIST_h
 
+#ifdef ATOMEYEDEBUG
+#include "../Scalar/Scalar.h"
+#else
 #include <Scalar.h>
-
+#endif
 /* everything is measured against the SI system */
 
 /* physical constants are from CODATA 98: */

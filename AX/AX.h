@@ -52,10 +52,15 @@
 #include <png.h>
 #include <jpeglib.h>
 /* Ju Li's C performance libraries */
+#ifdef ATOMEYEDEBUG
+#include "../Scalar/Scalar.h"
+#include "../IO/IO.h"
+#include "../Timer/Timer.h"
+#else
 #include <Scalar.h>
 #include <IO.h>
 #include <Timer.h>
-
+#endif
 
 /* AX Window ID: an application wide system resource like UNIX fileno */
 /* typedef int AX_WinID; */

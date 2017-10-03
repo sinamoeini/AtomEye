@@ -11,9 +11,13 @@
 #ifndef _VecMat3_h
 #define _VecMat3_h
 
+#ifdef ATOMEYEDEBUG
+#include "../IO/IO.h"
+#include "../Scalar/Scalar.h"
+#else
 #include <IO.h>
 #include <Scalar.h>
-
+#endif
 typedef double V3[3];
 typedef double M3[3][3];
 typedef double (*M3P)[3];

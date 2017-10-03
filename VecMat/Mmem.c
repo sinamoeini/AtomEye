@@ -128,7 +128,11 @@ double *Mclone (double *ptr, size_t size_in_dbles)
 #define TRIALS  100000
 #define DBLES   MMEM_UNIT
 #define TIMES   MMEM_SEGS
+#ifdef ATOMEYEDEBUG
+#include "../Timer/Timer.h"
+#else
 #include <Timer.h>
+#endif
 void main()
 {
     int i, j;

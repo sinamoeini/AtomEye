@@ -9,8 +9,14 @@
 
 #include <pthread.h>
 /* default A/eV/amu unit system by not defining U_'s here */
+#ifdef ATOMEYEDEBUG
+#include "../Atoms/Atoms.h"
+#include "../AX/AX.h"
+#else
 #include <Atoms.h>
 #include <AX.h>
+#endif
+
 
 #define XTERM_IDENTIFIER_SIZE     64
 #define MAX_FILENAME_SIZE         512

@@ -369,7 +369,11 @@ int main (int argc, char *argv[])
 
 #ifdef _M3diagContest_TEST
 #define M3diagContest_TRIALS  100000
+#ifdef ATOMEYEDEBUG
+#include "../Timer/Timer.h"
+#else
 #include <Timer.h>
+#endif
 int main(int argc, char *argv[])
 {
     int i;

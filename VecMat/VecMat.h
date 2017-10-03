@@ -10,9 +10,13 @@
 #ifndef _VecMat_h
 #define _VecMat_h
 
+#ifdef ATOMEYEDEBUG
+#include "../IO/IO.h"
+#include "../Scalar/Scalar.h"
+#else
 #include <IO.h>
 #include <Scalar.h>
-
+#endif
 /* local static memory / global static.. dynamic memory hierarchy */
 #define FREE(ptr,array,backup_free) \
  {if (((void *)(ptr))!=(void *)array) backup_free(ptr);}

@@ -7,7 +7,11 @@
 /****************************************/
 
 #include "IO.h"
+#ifdef ATOMEYEDEBUG
+#include "../Timer/Timer.h"
+#else
 #include <Timer.h>
+#endif
 
 /********************************************************/
 /* Duke it out with memset/bzero: and supporting longer */

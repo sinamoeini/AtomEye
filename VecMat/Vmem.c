@@ -195,7 +195,11 @@ double *Vclone (double *ptr, size_t size_in_dbles)
 #define TRIALS  100000
 #define DBLES   VMEM_UNIT
 #define TIMES   (VMEM_SEGS/2)
+#ifdef ATOMEYEDEBUG
+#include "../Timer/Timer.h"
+#else
 #include <Timer.h>
+#endif
 void main()
 {
     int i, j;

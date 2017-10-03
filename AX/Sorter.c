@@ -674,7 +674,11 @@ void AX_msort_Ju (int N, AX_Float x[], int idx[], int option)
 /* Fastest AX_Float array index sort subroutine contest */
 /********************************************************/
 #ifdef _sortersContest_TEST
+#ifdef ATOMEYEDEBUG
+#include "../Timer/Timer.h"
+#else
 #include <Timer.h>
+#endif
 #define N 2000001
 int main(int argc, char *argv[])
 {

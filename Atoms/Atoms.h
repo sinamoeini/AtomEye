@@ -11,11 +11,16 @@
 #ifndef _Atoms_h
 #define _Atoms_h
 
+#ifdef ATOMEYEDEBUG
+#include "../IO/IO.h"
+#include "../VecMat/VecMat.h"
+#include "../VecMat3/VecMat3.h"
+#else
 #include <IO.h>
 #include <VecMat.h>
 #include <VecMat3.h>
 #include "NIST.h"
-
+#endif
 /* Config.c: */
 /****************************************************/
 /* Minimal Specification of atomistic configuration */
