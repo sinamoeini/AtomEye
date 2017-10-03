@@ -189,8 +189,7 @@ int AX_plugin_ShmGC_module (int iw)
   defined(_IRIX)   || \
   defined(_IRIX64) || \
   defined(_SunOS)  || \
-  defined(_HPUX)   || \
-  defined(_Darwin) )
+  defined(_HPUX)   )
         AX_img[iw]->byte_order = MSBFirst;
         AX_img[iw]->bitmap_bit_order = MSBFirst;
 #else
