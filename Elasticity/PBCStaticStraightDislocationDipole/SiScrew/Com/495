@@ -1,0 +1,120 @@
+Return-Path: caiwei@llnl.gov
+Delivery-Date: Fri May  2 16:03:15 2003
+Return-Path: <caiwei@llnl.gov>
+Received: from localhost (localhost [127.0.0.1])
+	by mse-jl1.eng.ohio-state.edu (8.11.2/8.11.2) with ESMTP id h42K3Ff22015
+	for <lij@localhost>; Fri, 2 May 2003 16:03:15 -0400
+Received: from er6s1.eng.ohio-state.edu [164.107.76.2]
+	by localhost with POP3 (fetchmail-5.7.4)
+	for lij@localhost (single-drop); Fri, 02 May 2003 16:03:15 -0400 (EDT)
+Received: from CONVERSION-DAEMON.er6s1.eng.ohio-state.edu by
+ er6s1.eng.ohio-state.edu (PMDF V6.2 #34302)
+ id <01KVF5HIXKV4A0CEU5@er6s1.eng.ohio-state.edu> for
+ lij@er6s1.eng.ohio-state.edu (ORCPT lij@mse.eng.ohio-state.edu); Fri,
+ 02 May 2003 15:14:46 -0400 (EDT)
+Received: from smtp-1.llnl.gov (smtp-1.llnl.gov [128.115.250.81])
+ by er6s1.eng.ohio-state.edu (PMDF V6.2 #34302)
+ with ESMTP id <01KVF5HHWTL29ZVV5E@er6s1.eng.ohio-state.edu> for
+ lij@er6s1.eng.ohio-state.edu (ORCPT lij@mse.eng.ohio-state.edu); Fri,
+ 02 May 2003 15:14:45 -0400 (EDT)
+Received: from poptop.llnl.gov (localhost [127.0.0.1])
+ by smtp-1.llnl.gov (8.12.3/8.12.3/LLNL evision: 1.6 $)
+ with ESMTP id h42JDQGI005716; Fri, 02 May 2003 12:14:43 -0700 (PDT)
+Received: from ESCANABA.llnl.gov (account cai2 [134.9.108.75] verified)
+ by poptop.llnl.gov (CommuniGate Pro SMTP 4.0.6) with ESMTP id 17415812; Fri,
+ 02 May 2003 12:14:20 -0700
+Date: Fri, 02 May 2003 12:13:12 -0700
+From: Wei Cai <caiwei@llnl.gov>
+Subject: Shuffle screw core energy
+X-Sender: e003109@poptop.llnl.gov
+To: lij@mse.eng.ohio-state.edu
+Cc: bulatov1@llnl.gov, caiwei@llnl.gov
+Message-id: <5.1.0.14.2.20030502114245.029cd530@poptop.llnl.gov>
+MIME-version: 1.0
+X-Mailer: QUALCOMM Windows Eudora Version 5.1
+Content-type: text/plain; charset=us-ascii; format=flowed
+Original-recipient: rfc822;lij@mse.eng.ohio-state.edu
+
+Hi, Li Ju,
+I finally did what you asked for.  The good news is that everything seem to 
+fit together now.  The difference in core energy that we got (0.5022eV from 
+you and 0.527eV/A from me) indeed seems to come from different convention 
+(direction) of the core radius definition.
+
+The simulation cell directions are: X-[112], Y-[111], Z-[110], and the 
+dislocation dipole is along X axis.  I assume in your calculation, you must 
+have defined the core radius as follows:  when the dislocation dipole are 
+separated by rc (along X direction) their elastic energy is zero.
+
+Unfortunately, I chose a different definition in my calculation (for 
+mysterious reasons): when dislocation dipole are separated by rc (along Y 
+direction) their elastic energy is zero.  I checked the energy difference 
+in these two definitions, by computing the energy change when I rotate the 
+dipole from X direction to Y direction, while keeping their separation rc 
+constant.  The energy difference is 0.0486eV/A.  Dividing this by two, this 
+will lead to a 0.0243eV/A difference in the resulting core energy.
+
+I repeat the calculation using the two definitions, and get
+
+(1)  rc defined along [112] direction:  Ecore = 0.5023 eV/A   (your data 
+0.5023 eV/A)
+(2)  rc defined along [111] direction:  Ecore = 0.5266 eV/A   (my earlier 
+data 0.527eV/A)
+
+The minute difference can be explained by the different elastic constants 
+we have.  (I checked your web page, and find that somehow we are having 
+slightly different elastic constants.)  But anyway, by now we have improved 
+the agreement by one more order of magnitude.
+
+Below are more details of the comparison.
+
+ >The following (a) and (b) needs to be done:
+ >(a) Could you check if your relaxation code gives a total atomistic energy
+ >increment of -5317.838927 - 1152 x -4.630000 = 15.921073 eV
+ >for the configuration in
+ >http://164.107.79.177/Stuff/Wei/Dipole/screw
+ >
+Yes, I get the same atomistic energy (agreement within 2e-6eV)
+
+
+ > >(b) My elastic energy sum, if ignoring Ecore and r0 constants, gives
+ > >Eelastic = 15.6436 eV for the above supercell
+ > >
+ > >With:
+ > >Eatomistic = Eelastic + 2*(Ecore-PE*log(r0[A]))*linelength;
+ > >here, PE = 0.359818 eV/A, linelength = 7.68052 A,
+ > >r0 = b = 3.840262 A,
+ > >(details in http://164.107.79.177/Stuff/Wei/Dipole/Sum/dipole.out)
+ > >
+ > >I get Ecore = 0.5022 eV/A
+ > >
+My code only spit out the the image summation (Eimg) and the dipole energy 
+(Eprm).  In both definitions above, Eimg=-3.243687372e-01eV/A.
+
+With definition (1), Eprm=1.392634943eV/A.  Total elastic energy 
+Eel=1.068266206eV/A.  Ecore=(Eatm-Eel)/2=0.5023eV/A 
+(Eatm=15.921075/7.68052=2.0729eV/A).
+
+With definition (2), 
+Eprm=1.344021576eV/A.  Eel=1.019652839eV/A.  Ecore=(Eatm-Eel)=0.5266eV/A.
+
+ > >I think, based on the spirit of linear elasticity, it is better to
+ > >divide everything by the original, undeformed length.
+I agree.
+
+Cheers!
+Wei
+
+----------------------------------------------------
+Wei Cai
+
+L-353
+Lawrence Livermore National Laboratory
+P. O. Box 808
+7000 East Avenue
+Livermore, CA 94551
+
+caiwei@llnl.gov
+phone: 925-424-5443
+fax:   925-423-7040
+----------------------------------------------------

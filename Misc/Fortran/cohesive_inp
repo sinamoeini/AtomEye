@@ -1,0 +1,48 @@
+LDA data set label:
+CsCl-SiC nrk=10(5*5*5) 28 Ryd curoff Xc=ca
+
+Number of atomic species: 2
+Species: Si     1
+Species:  C     1
+
+Reference state: Si atom
+Composition: 1  0
+LDA total energy (eV/atom): -103.164
+Exp't cohesive energy (eV/atom): 0.
+
+Reference state: _C atom
+Composition: 0  1
+LDA total energy (eV/atom): -147.146
+Exp't cohesive energy (eV/atom): 0.
+
+LDA total energy (Ry) and cell volume (au^3):
+120.    -19.3947307605
+130.    -19.4103123655
+140.    -19.4119553075
+150.    -19.4036211206
+160.    -19.3883006834
+115.    -19.3798026532
+125.    -19.4046077868
+130.    -19.4103123655
+145.    -19.4088759887
+155.    -19.3967326799
+165.    -19.3786777010
+-9999.  -9999.
+
+Fit to (-1: Universal binding  >=0: Taylor expansion):
+3
+
+Parameters bound (-9999 means default):
+Lowest Total Cell Energy (Ry): 
+-9999  -9999  -9999
+Equilibrium Cell Volume (au^3): 
+-9999  -9999  -9999
+Bulk Modulus (MBar): 
+-9999  -9999  -9999
+
+DEL: 0.3
+NDIV: 10
+Save composite energies on files (*.cps,*.m): abc
+Number of mesh points: -9999
+Minimum volume/atom (A^3): -9999.
+Maximum volume/atom (A^3): -9999.

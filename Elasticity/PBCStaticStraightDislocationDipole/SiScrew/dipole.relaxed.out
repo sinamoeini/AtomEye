@@ -1,0 +1,479 @@
+**** Building crystal reference under SW
+**** potential with RCUT = 3.77118 = 3.77118 A
+
+------------- Chemical Species Report -----------
+Idx Type  Z  Avg.Mass   Count  Abundance  Wt.Pct.
+ 0   Si  14   28.086     1000   100.00%  100.00%
+-------------------------------------------------
+
+Create neighborlist with the following parameters:
+pairwise saving = YES,  track_dx = NO
+pbc[0] = YES,  pbc[1] = YES,  pbc[2] = YES,  
+Strain Session min_shrinkage = 0.9,
+All Atom Tether max_atom_displacement = 0 (reduced),
+-> UNCOMPRESSED reusable atom-atom list
+with 0.9 x Rlist_ij = Rcut_ij + 2 x 0;
+
+Rcut  = | 3.77118 | (reduced)
+ 
+rlist = | 4.1902 | (reduced)
+ 
+MAX(rlist) = 4.1902  ->  bin thicknesses should >= 4.1902
+since H thicknesses = ( 27  27  27 )
+-> 6 x 6 x 6 = 216 bins.
+bin-bin list created.
+
+Compressed bin-bin list: 216 entries, 24196 bytes allocated,
+max=27, min=27, avg=27.00, std.dev.=0.00 (0.0%).
+
+On average, there are 4.63 atoms per bin,
+but we will offer space of 14 for each.
+bin-atom list created.
+
+Uncompressed bin-atom list: 216 entries, 13828 bytes allocated,
+max=8, min=3, avg=4.63 (33.1%), std.dev.=1.25 (8.9%).
+
+After pairwise/own_pair saving,
+likely MAX(neighbor) = ( 16 ) atoms,
+atom-atom list created.
+
+Uncompressed atom-atom list: 1000 entries, 72004 bytes allocated,
+max=13, min=3, avg=8.00 (50.0%), std.dev.=2.02 (12.7%).
+
+Particle anchors established.
+
+reference lattice constant = 5.430950 = 5.430950 A,
+reference volume per particle = 20.023379 = 20.023379 A^3,
+reference energy per particle = -4.630000 = -4.630000 eV,
+c11 = 1.009057 = 161668.883515 MPa;
+c12 = 0.509258 = 81592.128503 MPa;
+c44 = 0.376163 = 60267.939877 MPa;
+B = 0.675858 = 108284.380174 MPa;
+
+Free energy will be minimized for defect "dipole"
+using SW pair potential with RCUT = 3.77118 = 3.77118 A
+under "constant_H" condition.
+
+Guessing file format of "dipole":
+should be Ju Li's CFG format.
+
+Loading configuration from "dipole":
+1152 atoms found.. reallocating memory
+
+    | 53.212223 -0        0        |   | 53.212223 -0        0        |  
+H = | 0        56.440086 -1.920131 | = | 0        56.440086 -1.920131 | A
+    | 0        0        7.680523 |     | 0        0        7.680523 |    
+
+supercell volume = 23066.9329045858 = 23066.9329045858 A^3
+avg. atomic volume = 20.023379257453 = 20.023379257453 A^3
+atomic number density = 0.0499416201003028 = 0.0499416201003028 A^-3
+avg. mass density = 2.32913035537221 g/cm^3
+
+-------------- Species Summary --------------
+Type  Mass[amu]   Count  Abundance  Wt. Pct.
+ Si     28.085     1152   100.00%   100.00%
+---------------------------------------------
+
+------------- Chemical Species Report -----------
+Idx Type  Z  Avg.Mass   Count  Abundance  Wt.Pct.
+ 0   Si  14   28.086     1152   100.00%  100.00%
+-------------------------------------------------
+
+Create neighborlist with the following parameters:
+pairwise saving = YES,  track_dx = NO
+pbc[0] = YES,  pbc[1] = YES,  pbc[2] = YES,  
+Strain Session min_shrinkage = 1,
+All Atom Tether max_atom_displacement = 0.0188559 (reduced),
+-> UNCOMPRESSED reusable atom-atom list
+with 1 x Rlist_ij = Rcut_ij + 2 x 0.0188559;
+
+Rcut  = | 3.77118 | (reduced)
+ 
+rlist = | 3.808892 | (reduced)
+ 
+MAX(rlist) = 3.80889  ->  bin thicknesses should >= 3.80889
+since H thicknesses = ( 53.212223  56.440086  7.676082 )
+-> 13 x 14 x 2 = 364 bins.
+bin-bin list created.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+On average, there are 3.16 atoms per bin,
+but we will offer space of 10 for each.
+bin-atom list created.
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+After pairwise/own_pair saving,
+likely MAX(neighbor) = ( 16 ) atoms,
+atom-atom list created.
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.76 (17.3%), std.dev.=1.26 (7.8%).
+
+Particle anchors established.
+
+********************* Before Minimization *********************
+The total energy = -5306.589000 eV, energy/atom = -4.606414 eV,
+so the defect formation energy (unrelaxed)
+= -5306.589000 - 1152 x -4.630000 = 27.171000 eV.
+(energy reference is perfect crystal at zero stress)
+The total volume = 23066.933 A^3, volume/atom = 20.023379 A^3,
+so the excess volume (unrelaxed)
+= 23066.932905 - 1152 x 20.023379 = 0.000000 A^3.
+(volume reference is perfect crystal at zero stress)
+                 |  113.977706  -201.497817    0.114085 |     
+Initial stress = | -201.497817  -229.247872   -0.080879 | MPa.
+                 |    0.114085    -0.080879  -63.07035  |     
+**************************************************************
+
+Random seed = 1042160655, using which we give each particle
+a random kick of (-0, 0) A in all 3 directions.
+
+Minimization tolerance = 2.220446e-16.
+
+The screen output would be saved on "dipole.relaxed.out".
+The relaxed configuration would be saved on "dipole.relaxed".
+Minimization starts...
+
+** Status Report at 100th Potential Evaluation **
+
+100 maintenances: total re_anchor count=1904,
+or 19.04 per maintenance, 0.0165278 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.79 (17.5%), std.dev.=1.26 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.812853 eV, energy/atom = -4.616157 eV,
+so the defect formation energy (relaxed)
+= -5317.812853 - 1152 x -4.630000 = 15.947147 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.223853 eV during the relaxation.
+atom residual |f| = 2.958451e-01 eV/A
+                 |  56.43581   -51.238734    -0.212907 |     
+Current stress = | -51.238734  -91.156995     0.803494 | MPa.
+                 |  -0.212907    0.803494  -312.187245 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 200th Potential Evaluation **
+
+200 maintenances: total re_anchor count=2016,
+or 10.08 per maintenance, 0.00875 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.80 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.835322 eV, energy/atom = -4.616176 eV,
+so the defect formation energy (relaxed)
+= -5317.835322 - 1152 x -4.630000 = 15.924678 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.246321 eV during the relaxation.
+atom residual |f| = 1.010664e-01 eV/A
+                 |  55.108916  -47.555669    -0.093335 |     
+Current stress = | -47.555669  -98.566091     0.385886 | MPa.
+                 |  -0.093335    0.385886  -312.345742 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 300th Potential Evaluation **
+
+300 maintenances: total re_anchor count=2056,
+or 6.85333 per maintenance, 0.00594907 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838102 eV, energy/atom = -4.616179 eV,
+so the defect formation energy (relaxed)
+= -5317.838102 - 1152 x -4.630000 = 15.921898 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249102 eV during the relaxation.
+atom residual |f| = 3.959983e-02 eV/A
+                 |  55.245366   -46.720976    -0.036469 |     
+Current stress = | -46.720976  -101.290656     0.177893 | MPa.
+                 |  -0.036469     0.177893  -312.105843 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 400th Potential Evaluation **
+
+400 maintenances: total re_anchor count=2060,
+or 5.15 per maintenance, 0.00447049 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838725 eV, energy/atom = -4.616179 eV,
+so the defect formation energy (relaxed)
+= -5317.838725 - 1152 x -4.630000 = 15.921275 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249725 eV during the relaxation.
+atom residual |f| = 1.877263e-02 eV/A
+                 |  55.078052   -46.86857     -0.021866 |     
+Current stress = | -46.86857   -101.162428     0.079746 | MPa.
+                 |  -0.021866     0.079746  -312.13216  |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 500th Potential Evaluation **
+
+500 maintenances: total re_anchor count=2060,
+or 4.12 per maintenance, 0.00357639 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838887 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838887 - 1152 x -4.630000 = 15.921113 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249887 eV during the relaxation.
+atom residual |f| = 8.849047e-03 eV/A
+                 |  55.009561   -46.913581    -0.022772 |     
+Current stress = | -46.913581  -101.051789     0.075674 | MPa.
+                 |  -0.022772     0.075674  -312.141866 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 600th Potential Evaluation **
+
+600 maintenances: total re_anchor count=2064,
+or 3.44 per maintenance, 0.00298611 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838919 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838919 - 1152 x -4.630000 = 15.921081 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249919 eV during the relaxation.
+atom residual |f| = 4.800799e-03 eV/A
+                 |  55.015967   -46.881639    -0.008269 |     
+Current stress = | -46.881639  -101.116825     0.052528 | MPa.
+                 |  -0.008269     0.052528  -312.121178 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 700th Potential Evaluation **
+
+700 maintenances: total re_anchor count=2064,
+or 2.94857 per maintenance, 0.00255952 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838925 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838925 - 1152 x -4.630000 = 15.921075 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249925 eV during the relaxation.
+atom residual |f| = 1.886359e-03 eV/A
+                 |  54.997795   -46.891518    -0.00869  |     
+Current stress = | -46.891518  -101.154817     0.040752 | MPa.
+                 |  -0.00869      0.040752  -312.113005 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 800th Potential Evaluation **
+
+800 maintenances: total re_anchor count=2064,
+or 2.58 per maintenance, 0.00223958 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 1.141677e-03 eV/A
+                 |  54.981501   -46.909647    -0.009162 |     
+Current stress = | -46.909647  -101.10386      0.03557  | MPa.
+                 |  -0.009162     0.03557   -312.115972 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 900th Potential Evaluation **
+
+900 maintenances: total re_anchor count=2064,
+or 2.29333 per maintenance, 0.00199074 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 6.454660e-04 eV/A
+                 |  54.98091    -46.899921    -0.008471 |     
+Current stress = | -46.899921  -101.104637     0.028806 | MPa.
+                 |  -0.008471     0.028806  -312.128618 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 1000th Potential Evaluation **
+
+1000 maintenances: total re_anchor count=2064,
+or 2.064 per maintenance, 0.00179167 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 2.422439e-04 eV/A
+                 |  54.984597   -46.898661    -0.006126 |     
+Current stress = | -46.898661  -101.107673     0.021641 | MPa.
+                 |  -0.006126     0.021641  -312.128338 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+** Status Report at 1100th Potential Evaluation **
+
+1100 maintenances: total re_anchor count=2064,
+or 1.87636 per maintenance, 0.00162879 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 2.471066e-04 eV/A
+                 |  54.982583   -46.89704     -0.003557 |     
+Current stress = | -46.89704   -101.101341     0.012885 | MPa.
+                 |  -0.003557     0.012885  -312.13121  |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+
+zxcgr: LINE SEARCH OF AN INTEGRATION WAS ABANDONED.
+THIS ERROR MAY BE CAUSED BY AN ERROR IN THE GRADIENT.
+
+** Status Report at 1147th Potential Evaluation **
+
+1146 maintenances: total re_anchor count=2064,
+or 1.80105 per maintenance, 0.00156341 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 2.066665e-04 eV/A
+                 |  54.983081   -46.896392    -0.003059 |     
+Current stress = | -46.896392  -101.103475     0.011004 | MPa.
+                 |  -0.003059     0.011004  -312.131196 |     
+**************************************************************
+
+Saving relaxed configuration on file "dipole.relaxed".
+

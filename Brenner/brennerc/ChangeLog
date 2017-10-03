@@ -1,0 +1,146 @@
+2000-09-22 pcm
+ Fixed rangetree to avoid repeating neighbor pairs.
+
+2000-09-04 pcm
+ Fixed bug in -R (num_neighbors wasn't being reset).
+ Changed default threshold for using range tree to a minimum of 100 atoms;
+below that the range tree is 1 or 2% slower than other algorithms.
+
+2000-08-30 pcm
+ Redid the range tree code, now in rangetree.c It now takes O(N log^2 N) time,
+does few mallocs, doesn't use MAX_ATOMS, and is called from bren2.c as well
+as from ljguts.c. It can discard in O(N log N) time atoms which are far away
+from any movable atom (this code currently requires command line option; may
+make it a default later).
+ Moved find_box call to where it is only called if boxes are used for neighboring.
+ Added command line options -R and -L to control thresholds.
+ Fixed problems with gleq thermostat; still unclear how well it is working.
+
+2000-08-18 pcm
+ Added volume scaling option.
+
+2000-08-17 pcm
+ Added code to handle Evans-Hoover, gleq, and zero thermostats.
+ Added option to keep net velocity zero.
+ Added missing ktype check in bren2.c bin neighboring code.
+ Moved choose_lj call to after third_order_corrector so as to work more
+like Fortran code - didn't see any change in behavior.
+
+2000-08-11 pcm
+ Fixed duplication in neighbor list when running bin'd version of
+make_neighbor_lists. Also fixed to only run when lchk == 1.
+ Added code to make n2_neighbor_list look only at pairs where i < j;
+couldn't measure speed difference, so I left the old way as the default.
+
+2000-08-10  Tim Freeman  <tim@infoscreen.com>
+Checked in modifications so it gets good results when doing most  
+of the computation with single precision floats.
+
+I also made some things inline.  I talked with Peter and we plan
+to use the inline keyword even though it isn't standard C.  People
+who want to compile our code can use -Dinline=, can use gcc, or
+can use any C++ compiler.  If they user -Dinline= and their
+compiler isn't clever about inlining, there will be a performance
+hit. 
+
+2000-08-10 pcm
+ Changed bcuint.c to apparently handle 32 neighbors (my possibly unrealistic
+slab2000.d demands over 20).
+
+2000-08-09
+
+If I compile with -DINFINITE_CUBE, and I set the cube size to
+1000x1000x1000, and I run with my buckygun test case, then it says at
+the beginning "warning: large cube size ... will require slower
+algorithm", and then it does 200 timesteps in 28 seconds, and the
+Fortran version can do the same 200 timesteps in 32 seconds and get
+the same result.  So we now have an apparently correct C version
+that's faster than the Fortran version in some cases.
+
+However, leaving the program compiled the same way, I would expect to
+be able to set the cube size to 100x100x100 and get the same results
+as the Fortran program with 1000x1000x1000, since nothing actually
+goes outside of this cube during the run, and with INFINITE_CUBE
+defined I would expect wraparound lennard-jones forces not to happen.
+But this is not the case.  I haven't debugged this.  It does get the
+wrong answer remarkably fast, in 18.2 seconds.  Looking at the
+frothing hydrogen molecules with Fungimol, I don't see anything
+obviously wrong with this quickly-generated output.
+
+If I turn off -DINFINITE_CUBE, and go with the small 100x100x100 cube,
+then the C code is now slower than the Fortran code (39 seconds vs. 32
+seconds) and the C code gets different results from the Fortran code.
+
+If I turn off -DINFINITE_CUBE and go with the large 1000x1000x1000
+cube, the C code is now much slower than the Fortran code (2 minutes
+vs. 32 seconds), but it does get correct output.
+
+So it looks to me like we have faster neighboring code that is
+slightly buggy.
+
+If I reduce the duration of the run from 200 steps to 20, I still get
+a match with a box size of 1000 and no INFINITE_CUBE; a mismatch with
+a box size of 100 and no INFINITE_CUBE; and a mismatch with a box size
+of 100 and INFINITE_CUBE vs. the Fortran version with a box size of
+1000.  Thus I can reproduce these problems with small test cases.
+
+In the version fetched by anonymous CVS from Peter, we get different
+results even with the large cube and no INFINITE_CUBE.
+
+In my version of 8/6, 23:30, I get matching results with the large
+cube or with the small cube.  In fact, the Fortran program gives the
+same results for the large cube or the small cube, and my version does
+too.
+
+My merged version does not give identical results to the version I
+fetched via anonymous CVS from Peter when used with the large cube or
+the small cube.  So it looks like I made some bug fix that isn't in
+Peter's version.
+
+2000-08-07 Tim Freeman
+
+The tentative indentation style to use in this code is gnu-style, with
+a tab-width of 4.  I prefer to set my editor to only use spaces when
+indenting, so my setting of tab-width affects what I see when other
+people write code, but it doesn't affect what I produce.  The
+gnu-emacs code for setting this mode is:
+
+(defun my-c-mode-hook ()
+  (setq indent-tabs-mode nil)
+  (setq tab-width 4)
+  (setup-my-keys)
+  (c-set-style "gnu"))
+(setq c-mode-hook 'my-c-mode-hook)
+
+I've seen a description of this indentation regime other than the
+emacs-lisp source that implements it (specifically, cc-styles.el), but
+I can't find it right now.  The main point is that code inside a block
+is indented only two characters more than the block itself, so you can
+do a lot of nesting before running out of horizontal space.
+
+Files with names starting with "x" contain code that was inherited at
+the start of this project, but is no longer maintained.  If the file is
+named xfoo.c, then it came from the source file foo.c.  If the
+original file foo.c included some code that is used and some code that
+is not, then the code that is used is still in foo.c and the code that
+is not is in xfoo.c.
+
+2000-07-29 pcm
+ Added assert to bcuint.c to catch bad index for clm array. Will try to
+find cause later.
+
+2000-07-08 Tim Freeman
+
+It appears that gcc version 2.91.66 does not compile this code
+correctly, and gcc 2.95.2 does.  The symptom is that if you generate
+the code with the old compiler, it gives different results from the
+Fortran version.  If you use the new compiler you get the same results
+as the Fortran version.
+
+2000-07-26 pcm
+ Added code to ljguts.c which should insure O(N log^3 N) scale-up for
+large molecules. Still need to figure out a good way of deciding when
+to use it.
+ Added #define to treat space as infinite rather than periodic.
+ Added minimize support.
+

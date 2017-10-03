@@ -1,0 +1,78 @@
+diff -Naur AX/AX.c AX_new/AX.c
+--- AX/AX.c	2006-01-11 16:53:34.000000000 -0700
++++ AX_new/AX.c	2008-04-21 10:51:44.000000000 -0600
+@@ -429,9 +429,9 @@
+             ( AX_visual[iw]->class == TrueColor );
+         if ( AX_noneedcolormap )
+         {
+-            AX_rmask = AX_visual[iw] -> red_mask;
+-            AX_gmask = AX_visual[iw] -> green_mask;
+-            AX_bmask = AX_visual[iw] -> blue_mask;
++            AX_rmask = AX_visual[iw] -> red_mask & AX_COLORMASK;
++            AX_gmask = AX_visual[iw] -> green_mask & AX_COLORMASK;
++            AX_bmask = AX_visual[iw] -> blue_mask & AX_COLORMASK;
+         }
+ 
+ #ifdef _AX_USE_SHM
+diff -Naur AX/AX.h AX_new/AX.h
+--- AX/AX.h	2006-01-11 16:53:34.000000000 -0700
++++ AX_new/AX.h	2008-04-21 11:16:12.000000000 -0600
+@@ -68,6 +68,8 @@
+ #define AX_DEFHEIGHT  AX_DEFWIDTH
+ 
+ /* named colors: provided by AX gratis */
++#define AX_ALPHAMASK	0xFF000000
++#define	AX_COLORMASK	0x00FFFFFF
+ #define AX_NAMEDCOLORS  8
+ #define AX_BLACK        0
+ #define AX_RED          1
+@@ -372,7 +374,8 @@
+ extern AX_Pixel AX_namedpixel [AX_NAMEDCOLORS];
+ 
+ /* recombining floats */
+-#define AX_pixel(r,g,b) ( \
++#define AX_pixel(r,g,b) (  \
++  (AX_ALPHAMASK)         | \
+   (AX_PIXEL(r)&AX_rmask) | \
+   (AX_PIXEL(g)&AX_gmask) | \
+   (AX_PIXEL(b)&AX_bmask) )
+@@ -386,7 +389,7 @@
+ 
+ /* 0xFFFFFF interface */
+ #define AX_COLORPIXEL(c) \
+-  AX_ColorPixel(iw, (c)>>16, ((c)>>8)&0xFF, (c)&0xFF, 0xFF)
++  AX_ColorPixel(iw, ((c)>>16)&0xFF, ((c)>>8)&0xFF, (c)&0xFF, 0xFF)
+ 
+ /** AX_Carrier: interface to Direct Pixmap Access like AX_set() **/
+ extern AX_Carrier AX_namedcarrier [AX_NAMEDCOLORS];
+@@ -424,7 +427,8 @@
+ 
+ 
+ /* recombining floats */
+-#define AX_carrier(r,g,b) ( \
++#define AX_carrier(r,g,b) (  \
++  (AX_ALPHAMASK)           | \
+   (AX_CARRIER(r)&AX_rmask) | \
+   (AX_CARRIER(g)&AX_gmask) | \
+   (AX_CARRIER(b)&AX_bmask) )
+@@ -439,7 +443,7 @@
+ 
+ /* 0xFFFFFF interface */
+ #define AX_COLORCARRIER(iw,c) \
+-  AX_ColorCarrier(iw, (c)>>16, ((c)>>8)&0xFF, (c)&0xFF, 0xFF)
++  AX_ColorCarrier(iw, ((c)>>16)&0xFF, ((c)>>8)&0xFF, (c)&0xFF, 0xFF)
+ 
+ /* Mixing two color carriers */
+ #define AX_mix(c0,c1,a1) AX_carrier( \
+@@ -1704,7 +1708,10 @@
+     AX_Float    z;
+ } AX_3D_Pixel;
+ 
+-#define AX_3D_AssignRGB(P,R,G,B) ((P).r=(R),(P).g=(G),(P).b=(B))
++#define AX_3D_AssignRGB(P,R,G,B) ( \
++	(P).r=(R), \
++	(P).g=(G), \
++	(P).b=(B))
+ 
+ /****************/
+ /* Line Support */

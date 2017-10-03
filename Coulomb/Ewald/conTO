@@ -1,0 +1,59 @@
+Total number of phases to calculate E_Coulomb:
+3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Name: 
+3C1
+Lattice vectors:
+0.5 	0.5	0.
+0.5	0.	0.5
+0.	0.5	0.5
+Number of atoms in the unit cell:
+2
+Type   (X	Y	Z):       
+1	0.	0.	0.
+2	0.25	0.25	0.25
+Number of volumes:
+1
+Their respective constant of lengths (A) and charge (e):
+ 4.        3.         5.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Name: 
+3C2
+Lattice vectors:
+0.5 	0.5	0.
+0.5	0.	0.5
+0.	0.5	0.5
+Number of atoms in the unit cell:
+2
+Type   (X	Y	Z):       
+1	0.	0.	0.
+2	0.25005	0.25005	0.25005
+Number of volumes:
+1
+Their respective constant of lengths (A) and charge (e):
+ 4.        3.         5.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Name: 
+3C3
+Lattice vectors:
+0.5 	0.5	0.
+0.5	0.	0.5
+0.	0.5	0.5
+Number of atoms in the unit cell:
+2
+Type   (X	Y	Z):       
+1	0.	0.	0.
+2	0.25005	0.25	0.25
+Number of volumes:
+1
+Their respective constant of lengths (A) and charge (e):
+ 4.        3.         5.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

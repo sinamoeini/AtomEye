@@ -1,0 +1,474 @@
+**** Building crystal reference under SW
+**** potential with RCUT = 3.77118 = 3.77118 A
+
+------------- Chemical Species Report -----------
+Idx Type  Z  Avg.Mass   Count  Abundance  Wt.Pct.
+ 0   Si  14   28.086     1000   100.00%  100.00%
+-------------------------------------------------
+
+Create neighborlist with the following parameters:
+pairwise saving = YES,  track_dx = NO
+pbc[0] = YES,  pbc[1] = YES,  pbc[2] = YES,  
+Strain Session min_shrinkage = 0.9,
+All Atom Tether max_atom_displacement = 0 (reduced),
+-> UNCOMPRESSED reusable atom-atom list
+with 0.9 x Rlist_ij = Rcut_ij + 2 x 0;
+
+Rcut  = | 3.77118 | (reduced)
+ 
+rlist = | 4.1902 | (reduced)
+ 
+MAX(rlist) = 4.1902  ->  bin thicknesses should >= 4.1902
+since H thicknesses = ( 27  27  27 )
+-> 6 x 6 x 6 = 216 bins.
+bin-bin list created.
+
+Compressed bin-bin list: 216 entries, 24196 bytes allocated,
+max=27, min=27, avg=27.00, std.dev.=0.00 (0.0%).
+
+On average, there are 4.63 atoms per bin,
+but we will offer space of 14 for each.
+bin-atom list created.
+
+Uncompressed bin-atom list: 216 entries, 13828 bytes allocated,
+max=8, min=3, avg=4.63 (33.1%), std.dev.=1.25 (8.9%).
+
+After pairwise/own_pair saving,
+likely MAX(neighbor) = ( 16 ) atoms,
+atom-atom list created.
+
+Uncompressed atom-atom list: 1000 entries, 72004 bytes allocated,
+max=13, min=3, avg=8.00 (50.0%), std.dev.=2.02 (12.7%).
+
+Particle anchors established.
+
+reference lattice constant = 5.430950 = 5.430950 A,
+reference volume per particle = 20.023379 = 20.023379 A^3,
+reference energy per particle = -4.630000 = -4.630000 eV,
+c11 = 1.009057 = 161668.883515 MPa;
+c12 = 0.509258 = 81592.128503 MPa;
+c44 = 0.376163 = 60267.939877 MPa;
+B = 0.675858 = 108284.380174 MPa;
+
+Free energy will be minimized for defect "screw"
+using SW pair potential with RCUT = 3.77118 = 3.77118 A
+under "constant_H" condition.
+
+To construct "screw",
+we build 8 x 6 x 2 crystal first.
+
+dipole_s0 = ( 0.260417  0.527778 )
+dipole_s1 = ( 0.760417  0.527778 )
+ 
+    | 181.898446   68.105754   74.848941   0         -0          9.536307 |    
+    |  68.105754  188.641633   68.105754   0          0         -0        |    
+C = |  74.848941   68.105754  181.898446  -0         -0         -9.536307 | GPa
+    |   0           0          -0         46.781565  -9.536307   0        |    
+    |  -0           0          -0         -9.536307  53.524752   0        |    
+    |   9.536307   -0          -9.536307   0          0         46.781565 |    
+ 
+------------- Chemical Species Report -----------
+Idx Type  Z  Avg.Mass   Count  Abundance  Wt.Pct.
+ 0   Si  14   28.086     1152   100.00%  100.00%
+-------------------------------------------------
+
+Create neighborlist with the following parameters:
+pairwise saving = YES,  track_dx = NO
+pbc[0] = YES,  pbc[1] = YES,  pbc[2] = YES,  
+Strain Session min_shrinkage = 1,
+All Atom Tether max_atom_displacement = 0.0188559 (reduced),
+-> UNCOMPRESSED reusable atom-atom list
+with 1 x Rlist_ij = Rcut_ij + 2 x 0.0188559;
+
+Rcut  = | 3.77118 | (reduced)
+ 
+rlist = | 3.808892 | (reduced)
+ 
+MAX(rlist) = 3.80889  ->  bin thicknesses should >= 3.80889
+since H thicknesses = ( 53.212223  56.440086  7.676082 )
+-> 13 x 14 x 2 = 364 bins.
+bin-bin list created.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+On average, there are 3.16 atoms per bin,
+but we will offer space of 10 for each.
+bin-atom list created.
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+After pairwise/own_pair saving,
+likely MAX(neighbor) = ( 16 ) atoms,
+atom-atom list created.
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.76 (17.3%), std.dev.=1.26 (7.8%).
+
+Particle anchors established.
+
+********************* Before Minimization *********************
+The total energy = -5306.589000 eV, energy/atom = -4.606414 eV,
+so the defect formation energy (unrelaxed)
+= -5306.589000 - 1152 x -4.630000 = 27.171000 eV.
+(energy reference is perfect crystal at zero stress)
+The total volume = 23066.933 A^3, volume/atom = 20.023379 A^3,
+so the excess volume (unrelaxed)
+= 23066.932905 - 1152 x 20.023379 = 0.000000 A^3.
+(volume reference is perfect crystal at zero stress)
+                 |  113.977706  -201.497817    0.114085 |     
+Initial stress = | -201.497817  -229.247872   -0.080879 | MPa.
+                 |    0.114085    -0.080879  -63.07035  |     
+**************************************************************
+
+Random seed = 1042160382, using which we give each particle
+a random kick of (-0, 0) A in all 3 directions.
+
+Minimization tolerance = 2.220446e-16.
+
+The screen output would be saved on "screw.out".
+The relaxed configuration would be saved on "screw".
+Minimization starts...
+
+** Status Report at 100th Potential Evaluation **
+
+100 maintenances: total re_anchor count=1904,
+or 19.04 per maintenance, 0.0165278 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.79 (17.5%), std.dev.=1.26 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.812853 eV, energy/atom = -4.616157 eV,
+so the defect formation energy (relaxed)
+= -5317.812853 - 1152 x -4.630000 = 15.947147 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.223853 eV during the relaxation.
+atom residual |f| = 2.958451e-01 eV/A
+                 |  56.43581   -51.238734    -0.212907 |     
+Current stress = | -51.238734  -91.156995     0.803494 | MPa.
+                 |  -0.212907    0.803494  -312.187245 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 200th Potential Evaluation **
+
+200 maintenances: total re_anchor count=2016,
+or 10.08 per maintenance, 0.00875 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.80 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.835322 eV, energy/atom = -4.616176 eV,
+so the defect formation energy (relaxed)
+= -5317.835322 - 1152 x -4.630000 = 15.924678 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.246321 eV during the relaxation.
+atom residual |f| = 1.010664e-01 eV/A
+                 |  55.108917  -47.555668    -0.093335 |     
+Current stress = | -47.555668  -98.566091     0.385886 | MPa.
+                 |  -0.093335    0.385886  -312.345742 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 300th Potential Evaluation **
+
+300 maintenances: total re_anchor count=2056,
+or 6.85333 per maintenance, 0.00594907 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838102 eV, energy/atom = -4.616179 eV,
+so the defect formation energy (relaxed)
+= -5317.838102 - 1152 x -4.630000 = 15.921898 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249102 eV during the relaxation.
+atom residual |f| = 3.959984e-02 eV/A
+                 |  55.245362   -46.720977    -0.036469 |     
+Current stress = | -46.720977  -101.290648     0.177893 | MPa.
+                 |  -0.036469     0.177893  -312.105846 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 400th Potential Evaluation **
+
+400 maintenances: total re_anchor count=2060,
+or 5.15 per maintenance, 0.00447049 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838725 eV, energy/atom = -4.616179 eV,
+so the defect formation energy (relaxed)
+= -5317.838725 - 1152 x -4.630000 = 15.921275 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249725 eV during the relaxation.
+atom residual |f| = 1.877226e-02 eV/A
+                 |  55.078476   -46.868526    -0.021842 |     
+Current stress = | -46.868526  -101.16328      0.079724 | MPa.
+                 |  -0.021842     0.079724  -312.131704 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 500th Potential Evaluation **
+
+500 maintenances: total re_anchor count=2060,
+or 4.12 per maintenance, 0.00357639 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838887 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838887 - 1152 x -4.630000 = 15.921113 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249887 eV during the relaxation.
+atom residual |f| = 8.847853e-03 eV/A
+                 |  55.008704   -46.913709    -0.022758 |     
+Current stress = | -46.913709  -101.050156     0.075554 | MPa.
+                 |  -0.022758     0.075554  -312.142475 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 600th Potential Evaluation **
+
+600 maintenances: total re_anchor count=2064,
+or 3.44 per maintenance, 0.00298611 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838919 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838919 - 1152 x -4.630000 = 15.921081 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249919 eV during the relaxation.
+atom residual |f| = 4.835028e-03 eV/A
+                 |  55.018682   -46.881786    -0.008356 |     
+Current stress = | -46.881786  -101.121895     0.052783 | MPa.
+                 |  -0.008356     0.052783  -312.118409 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 700th Potential Evaluation **
+
+700 maintenances: total re_anchor count=2064,
+or 2.94857 per maintenance, 0.00255952 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838925 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838925 - 1152 x -4.630000 = 15.921075 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249925 eV during the relaxation.
+atom residual |f| = 1.889095e-03 eV/A
+                 |  55.002677   -46.891901    -0.008361 |     
+Current stress = | -46.891901  -101.165048     0.040467 | MPa.
+                 |  -0.008361     0.040467  -312.107731 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 800th Potential Evaluation **
+
+800 maintenances: total re_anchor count=2064,
+or 2.58 per maintenance, 0.00223958 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 1.139501e-03 eV/A
+                 |  54.986566   -46.908691    -0.008723 |     
+Current stress = | -46.908691  -101.113792     0.034695 | MPa.
+                 |  -0.008723     0.034695  -312.11289  |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 900th Potential Evaluation **
+
+900 maintenances: total re_anchor count=2064,
+or 2.29333 per maintenance, 0.00199074 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 6.074941e-04 eV/A
+                 |  54.982951   -46.899349    -0.008133 |     
+Current stress = | -46.899349  -101.106483     0.028136 | MPa.
+                 |  -0.008133     0.028136  -312.128033 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 1000th Potential Evaluation **
+
+1000 maintenances: total re_anchor count=2064,
+or 2.064 per maintenance, 0.00179167 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 2.172712e-04 eV/A
+                 |  54.982646   -46.898067    -0.006442 |     
+Current stress = | -46.898067  -101.102919     0.022464 | MPa.
+                 |  -0.006442     0.022464  -312.131359 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+** Status Report at 1100th Potential Evaluation **
+
+1100 maintenances: total re_anchor count=2064,
+or 1.87636 per maintenance, 0.00162879 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 2.278081e-04 eV/A
+                 |  54.983555   -46.897122    -0.003771 |     
+Current stress = | -46.897122  -101.104645     0.012964 | MPa.
+                 |  -0.003771     0.012964  -312.129403 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+zxcgr: LINE SEARCH OF AN INTEGRATION WAS ABANDONED.
+THIS ERROR MAY BE CAUSED BY AN ERROR IN THE GRADIENT.
+
+** Status Report at 1106th Potential Evaluation **
+
+1105 maintenances: total re_anchor count=2064,
+or 1.86787 per maintenance, 0.00162142 per atom per maintenance.
+
+Compressed bin-bin list: 364 entries, 27668 bytes allocated,
+max=18, min=18, avg=18.00, std.dev.=0.00 (0.0%).
+
+Uncompressed bin-atom list: 364 entries, 17476 bytes allocated,
+max=6, min=2, avg=3.16 (31.6%), std.dev.=1.10 (11.0%).
+
+Uncompressed atom-atom list: 1152 entries, 82948 bytes allocated,
+max=7, min=0, avg=2.81 (17.5%), std.dev.=1.27 (7.9%).
+
+********************* After Minimization *********************
+The total energy = -5317.838927 eV, energy/atom = -4.616180 eV,
+so the defect formation energy (relaxed)
+= -5317.838927 - 1152 x -4.630000 = 15.921073 eV.
+(energy reference is perfect crystal at zero stress)
+and it has increased by -11.249927 eV during the relaxation.
+atom residual |f| = 2.278081e-04 eV/A
+                 |  54.983555   -46.897122    -0.003771 |     
+Current stress = | -46.897122  -101.104645     0.012964 | MPa.
+                 |  -0.003771     0.012964  -312.129403 |     
+**************************************************************
+
+Saving relaxed configuration on file "screw".
+
+Ecore = 0.50221 eV/A at r0 = 3.84026 A;
+or = 0 at r0 = 0.951044 A.

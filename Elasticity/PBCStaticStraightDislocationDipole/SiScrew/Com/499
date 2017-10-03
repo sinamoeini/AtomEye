@@ -1,0 +1,139 @@
+Return-Path: lij@mse.eng.ohio-state.edu
+Delivery-Date: Fri May  2 17:27:02 2003
+Return-Path: <lij@mse.eng.ohio-state.edu>
+Received: from localhost (localhost [127.0.0.1])
+	by mse-jl1.eng.ohio-state.edu (8.11.2/8.11.2) with ESMTP id h42LR2f22816
+	for <lij@localhost>; Fri, 2 May 2003 17:27:02 -0400
+Received: from er6s1.eng.ohio-state.edu [164.107.76.2]
+	by localhost with POP3 (fetchmail-5.7.4)
+	for lij@localhost (single-drop); Fri, 02 May 2003 17:27:02 -0400 (EDT)
+Received: from CONVERSION-DAEMON.er6s1.eng.ohio-state.edu by
+ er6s1.eng.ohio-state.edu (PMDF V6.2 #34302)
+ id <01KVF9WWHZQ8A0C5YE@er6s1.eng.ohio-state.edu> for
+ lij@er6s1.eng.ohio-state.edu (ORCPT lij@mse.eng.ohio-state.edu); Fri,
+ 02 May 2003 17:21:43 -0400 (EDT)
+Received: from mse-jl1.eng.ohio-state.edu
+ (mse-jl1.eng.ohio-state.edu [164.107.79.177]) by er6s1.eng.ohio-state.edu
+ (PMDF V6.2 #34302) with ESMTP id <01KVF9WVRILGA0HY2N@er6s1.eng.ohio-state.edu>
+ for lij@er6s1.eng.ohio-state.edu (ORCPT lij@mse.eng.ohio-state.edu); Fri,
+ 02 May 2003 17:21:40 -0400 (EDT)
+Received: from mse.eng.ohio-state.edu (lij@localhost)
+ by mse-jl1.eng.ohio-state.edu (8.11.2/8.11.2) with ESMTP id h42LMMK22632; Fri,
+ 02 May 2003 17:22:22 -0400
+Date: Fri, 02 May 2003 17:22:22 -0400
+From: Ju Li <lij@mse.eng.ohio-state.edu>
+Subject: Re: Shuffle screw core energy
+In-reply-to: "Your message of Fri, 02 May 2003 12:13:12 PDT."
+ <5.1.0.14.2.20030502114245.029cd530@poptop.llnl.gov>
+To: Wei Cai <caiwei@llnl.gov>
+Cc: wangcz@ameslab.gov, lij@mse.eng.ohio-state.edu, jpchang@MIT.EDU
+Message-id: <200305022122.h42LMMK22632@mse-jl1.eng.ohio-state.edu>
+Content-id: <22630.1051910542.1@mse.eng.ohio-state.edu>
+MIME-version: 1.0
+Content-type: text/plain; charset=us-ascii
+X-Authentication-warning: mse-jl1.eng.ohio-state.edu: lij owned process doing
+ -bs
+Original-recipient: rfc822;lij@mse.eng.ohio-state.edu
+
+Wei:
+
+This is great news. It is now clear that there is no more mystery in
+straight dislocations. All we need to do now for the Mo paper is to
+change the wording, which I can do. I'll set up a notation system and
+a text interpretation that we both agree, and I will present the
+angular-dependent core energy for Mo - in which the constant part
+contains atomistic info, and the angular-variable part depends on just
+the elastic constant and angle=0 definition. You then need to check my
+numbers for Mo, and reword the text until we both like it.
+
+I will also put a toolkit of source codes and stand-alone linux
+binaries on the web with documentation. They would allow for
+displacement, strain, stress field predictions in addition to total
+energy and total virial stress predictions in a PBC supercell.
+
+Ju.
+
+
+> Hi, Li Ju,
+> I finally did what you asked for.  The good news is that everything seem to 
+> fit together now.  The difference in core energy that we got (0.5022eV from 
+> you and 0.527eV/A from me) indeed seems to come from different convention 
+> (direction) of the core radius definition.
+> 
+> The simulation cell directions are: X-[112], Y-[111], Z-[110], and the 
+> dislocation dipole is along X axis.  I assume in your calculation, you must 
+> have defined the core radius as follows:  when the dislocation dipole are 
+> separated by rc (along X direction) their elastic energy is zero.
+> 
+> Unfortunately, I chose a different definition in my calculation (for 
+> mysterious reasons): when dislocation dipole are separated by rc (along Y 
+> direction) their elastic energy is zero.  I checked the energy difference 
+> in these two definitions, by computing the energy change when I rotate the 
+> dipole from X direction to Y direction, while keeping their separation rc 
+> constant.  The energy difference is 0.0486eV/A.  Dividing this by two, this 
+> will lead to a 0.0243eV/A difference in the resulting core energy.
+> 
+> I repeat the calculation using the two definitions, and get
+> 
+> (1)  rc defined along [112] direction:  Ecore = 0.5023 eV/A   (your data 
+> 0.5023 eV/A)
+> (2)  rc defined along [111] direction:  Ecore = 0.5266 eV/A   (my earlier 
+> data 0.527eV/A)
+> 
+> The minute difference can be explained by the different elastic constants 
+> we have.  (I checked your web page, and find that somehow we are having 
+> slightly different elastic constants.)  But anyway, by now we have improved 
+> the agreement by one more order of magnitude.
+> 
+> Below are more details of the comparison.
+> 
+>  >The following (a) and (b) needs to be done:
+>  >(a) Could you check if your relaxation code gives a total atomistic energy
+>  >increment of -5317.838927 - 1152 x -4.630000 = 15.921073 eV
+>  >for the configuration in
+>  >http://164.107.79.177/Stuff/Wei/Dipole/screw
+>  >
+> Yes, I get the same atomistic energy (agreement within 2e-6eV)
+> 
+> 
+>  > >(b) My elastic energy sum, if ignoring Ecore and r0 constants, gives
+>  > >Eelastic = 15.6436 eV for the above supercell
+>  > >
+>  > >With:
+>  > >Eatomistic = Eelastic + 2*(Ecore-PE*log(r0[A]))*linelength;
+>  > >here, PE = 0.359818 eV/A, linelength = 7.68052 A,
+>  > >r0 = b = 3.840262 A,
+>  > >(details in http://164.107.79.177/Stuff/Wei/Dipole/Sum/dipole.out)
+>  > >
+>  > >I get Ecore = 0.5022 eV/A
+>  > >
+> My code only spit out the the image summation (Eimg) and the dipole energy 
+> (Eprm).  In both definitions above, Eimg=-3.243687372e-01eV/A.
+> 
+> With definition (1), Eprm=1.392634943eV/A.  Total elastic energy 
+> Eel=1.068266206eV/A.  Ecore=(Eatm-Eel)/2=0.5023eV/A 
+> (Eatm=15.921075/7.68052=2.0729eV/A).
+> 
+> With definition (2), 
+> Eprm=1.344021576eV/A.  Eel=1.019652839eV/A.  Ecore=(Eatm-Eel)=0.5266eV/A.
+> 
+>  > >I think, based on the spirit of linear elasticity, it is better to
+>  > >divide everything by the original, undeformed length.
+> I agree.
+> 
+> Cheers!
+> Wei
+> 
+> ----------------------------------------------------
+> Wei Cai
+> 
+> L-353
+> Lawrence Livermore National Laboratory
+> P. O. Box 808
+> 7000 East Avenue
+> Livermore, CA 94551
+> 
+> caiwei@llnl.gov
+> phone: 925-424-5443
+> fax:   925-423-7040
+> ----------------------------------------------------

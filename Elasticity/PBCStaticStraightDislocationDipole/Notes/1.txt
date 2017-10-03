@@ -1,0 +1,57 @@
+Return-Path: lij@mse.eng.ohio-state.edu
+Delivery-Date: Thu Jan  9 20:24:34 2003
+Return-Path: <lij@mse.eng.ohio-state.edu>
+Received: from localhost (localhost [127.0.0.1])
+	by mse-jl1.eng.ohio-state.edu (8.11.2/8.11.2) with ESMTP id h0A1OY521733
+	for <lij@localhost>; Thu, 9 Jan 2003 20:24:34 -0500
+Received: from er6s1.eng.ohio-state.edu [164.107.76.2]
+	by localhost with POP3 (fetchmail-5.7.4)
+	for lij@localhost (single-drop); Thu, 09 Jan 2003 20:24:34 -0500 (EST)
+Received: from CONVERSION-DAEMON by er6s1.eng.ohio-state.edu
+ (PMDF V5.2-33 #34302) id <01KR1L9SQO1C9ZQI1R@er6s1.eng.ohio-state.edu> for
+ lij@er6s1.eng.ohio-state.edu (ORCPT rfc822;lij@mse.eng.ohio-state.edu); Thu,
+ 9 Jan 2003 20:21:31 EST
+Received: from mse-jl1.eng.ohio-state.edu
+ (mse-jl1.eng.ohio-state.edu [164.107.79.177]) by er6s1.eng.ohio-state.edu
+ (PMDF V5.2-33 #34302)
+ with ESMTP id <01KR1L9RZRU09ZO8PM@er6s1.eng.ohio-state.edu> for
+ lij@er6s1.eng.ohio-state.edu (ORCPT rfc822;lij@mse.eng.ohio-state.edu); Thu,
+ 09 Jan 2003 20:21:29 -0500 (EST)
+Received: from mse.eng.ohio-state.edu (lij@localhost)
+ by mse-jl1.eng.ohio-state.edu (8.11.2/8.11.2) with ESMTP id h0A1NjO21698; Thu,
+ 09 Jan 2003 20:23:45 -0500
+Date: Thu, 09 Jan 2003 20:23:45 -0500
+From: Ju Li <lij@mse.eng.ohio-state.edu>
+Subject: stand-alone dipole generator
+To: wangcz@ameslab.gov, jpchang@MIT.EDU, caiwei@llnl.gov
+Cc: lij@mse.eng.ohio-state.edu
+Message-id: <200301100123.h0A1NjO21698@mse-jl1.eng.ohio-state.edu>
+Content-id: <21696.1042161825.1@mse.eng.ohio-state.edu>
+MIME-version: 1.0
+Content-type: text/plain; charset=us-ascii
+X-Authentication-warning: mse-jl1.eng.ohio-state.edu: lij owned process doing
+ -bs
+Original-recipient: rfc822;lij@mse.eng.ohio-state.edu
+
+Hi,
+
+I have written a stand-alone dislocation dipole configuration
+generator with core energy accounting at
+
+http://164.107.79.177/Stuff/Wei/Elasticity/PBCStaticStraightDislocationDipole/
+
+the linux binary is called "PBCStaticStraightDislocationDipole" in the
+same directory. You use it by
+
+PBCStaticStraightDislocationDipole < input
+
+Right now it's only for screw dipole. I will implement automatic atom
+removal for edge and mixed dipoles shortly.
+
+The purpose of this application is to make a universal, standard tool
+for all of us based on Wei's discoveries. Please use it and check it.
+
+I will put this and future documentations in the "Notes/"
+directory. 
+
+Ju.

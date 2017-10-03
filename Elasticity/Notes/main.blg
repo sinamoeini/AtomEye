@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+Database file #1: MyBibliography.bib
+Warning--entry type for "LiMathematica08" isn't style-file defined
+--line 80 of file MyBibliography.bib
+You've used 7 entries,
+            1791 wiz_defined-function locations,
+            498 strings with 4627 characters,
+and the built_in function-call counts, 1435 in all, are:
+= -- 127
+> -- 52
+< -- 0
++ -- 21
+- -- 14
+* -- 94
+:= -- 243
+add.period$ -- 22
+call.type$ -- 7
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 7
+duplicate$ -- 57
+empty$ -- 147
+format.name$ -- 14
+if$ -- 313
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 5
+newline$ -- 39
+num.names$ -- 7
+pop$ -- 13
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 21
+stack$ -- 0
+substring$ -- 111
+swap$ -- 7
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 12
+width$ -- 8
+write$ -- 80
+(There was 1 warning)

@@ -1,0 +1,172 @@
+         Brenner Potential Molecular Dynamics C Interface, version 0.03
+
+ This package provides a simple way to call the Brenner potential
+molecular dynamics code from C code.
+ It was produced by Peter McCluskey from Donald Brenner's Fortran code
+and from C code started by John Michelsen while he was at Zyvex.
+ Updated versions will probably be made available at
+http://www.rahul.net/pcm/brenner/.
+ There are two largely separate code bases here, one an interface to
+the original Fortran code, and the other a pure C implementation.
+
+INFINITE_CUBE
+If you compile with -DININITE_CUBE, then we assume that space is flat
+rather than periodic, and the code runs significantly faster.
+
+ Some of the code is public domain, some of it is covered by a Berkeley-style
+open source license.
+
+ See also Brenner's web page at
+http://www.engr.ncsu.edu/mat/CompMatSci/projects.html,
+and the Fungimol page at http://www.infoscreen.com/fungimol/.
+====================================================================
+
+ This package is primarily intended to be a library which you can incorporate
+into your programs. The following executables are examples of how to use it:
+
+ brennerfile (C code only)
+    This works somewhat the same as the original Fortran version, reading
+  and writing a several .d files.
+    Optional command line arguments:
+     -c <filename> - write new file (equivalent to coord.d) to this filename.
+     -m <integer> - how many steps between xmol file saves
+     -s <integer> - number of timesteps
+     -t <float> - temperature (Kelvin)
+     -k <integer> - kflag (see below)
+     -z           - for large molecules with many atoms marked as not
+                    movable, this will speed up the code that identifies
+                    neighbors.
+     -L <integer> - use range tree code to find Lennard-Jones neighbors
+                   if at least this many atoms (default 100).
+     -R <integer> - use range tree code to find neighbors for non
+                  Lennard-Jones code if at least this many atoms (default 100).
+     -0         - reset center of mass velocity to zero after each step.
+     -v <integer> -  -1 for no scaling, or 0, 1, or 2 to scale
+			 the volume along the x, y, or z axis
+
+ brennerrasmol (C code only)
+   This uses a version of RasMol which has been adapted for use as a
+ library (available at http://www.rahul.net/pcm/rasmolapi.tar.gz). It
+ animates the calculations.
+   There is one required command line argument, the name of the input file
+ (.pdb format; I haven't checked whether other formats supported by RasMol
+ work here).
+   Optional flags which may precede the filename:
+     -c <filename> - write new file (equivalent to coord.d) to this filename.
+     -d <float> - set the dimensions (angstroms) of the cube in which atoms
+                may move.
+     -s <integer> - number of timesteps
+     -t <float> - temperature (Kelvin)
+ brennerrasmol can also be used to translate .pdb files to .d files, if
+ called like this: brennerrasmol -s 0 -c coord.d foobar.pdb
+
+ brenfort (uses Fortran library)
+    This works almost the same as the original Fortran version, reading
+  and writing a several .d files.
+    The first command line argument is KFLAG (described below), the second
+  is the number of timesteps. Both arguments are optional.
+
+ brenfras (uses Fortran library)
+   This uses a version of RasMol which has been adapted for use as a
+ library (available at http://www.rahul.net/pcm/rasmolapi.tar.gz). It
+ animates the calculations.
+   There is one required command line argument, the name of the input file
+ (.pdb format; I haven't checked whether other formats supported by RasMol
+ work here).
+   Optional flags which may precede the filename:
+   -d <float> - set the dimensions (angstroms) of the cube in which atoms
+                may move.
+   -k <integer> - kflag
+   -s <integer> - number of timesteps
+   -t <float> - temperature (Kelvin)
+   The display often looks strange when an atom crosses the boundary
+ of the simulation and wraps around to the other side.
+  Note that, at least under Linux, if it terminates abnormally the terminal
+ will be screwed up (a rasmol quirk) and you will want to use the "reset"
+ command.
+
+ I have tested them only under Linux. They should be fairly portable.
+
+====================================================================
+
+Installation (should work for most Unix systems; I don't know about other OSs):
+
+ This assumes you have g77 and f2c installed on your system (g77 is
+distributed with gcc, see http://netlib.bell-labs.com/netlib/f2c/ for f2c).
+I don't know how to handle other Fortran compilers.
+
+ Install the Fortran code from http://www.rahul.net/pcm/brenner/brennermd.tar.gz.
+Go to the Subroutines/General/ and type:
+  make libbren.a
+  make c_interface.h       (the error messages this produces are usually bogus)
+and copy the resulting libbren.a and c_interface.h to the current directory.
+ Copy g2c.h from the g77 distribution to the current directory, or else
+read g2c.sample.h.
+ If you use a C compiler other than gcc, you will probably need to remove
+some options from C_FLAGS in Makefile.
+ If you want to run the examples that use RasMol, get and install
+http://www.rahul.net/pcm/ramolapi.tar.gz. Edit RASAPIDIR in Makefile to
+indicate what directory you have installed librasmol.a and the .h files.
+If your X libraries aren't in /usr/X11R6/lib, edit LIBS in Makefile.
+
+Run one or more of these:
+
+ make                # to make everything
+ make brenfort       # sample program to use .d files
+ make brenfras       # sample program to visualize dynamics from .pdb file
+ make brenfort.o     # interface to Fortran library
+ make brennerfile    # sample program to use .d files (C library version)
+ make brennerrasmol  # sample program to visualize dynamics from .pdb file (C)
+ make libbrenner.a   # C library
+
+====================================================================
+Usage:
+#include "brenfort.h"         /* if you are using the Fortran interface */
+ or
+#include "brenner.h"          /* if you are using the C library */
+
+ Start with this (if in doubt, use 0 for tight_binding and 1 for kflag):
+
+      BrennerMainInfo *info = alloc_bren();
+      
+      [add code here to initialize coordinates in info]
+
+      init_bren(info, kflag, tight_binding);
+
+ If kflag is 6 (minimize), init_bren will do the minimization. You will
+probably want to do:
+      update_info(info);
+to access the final coordinates.
+
+ If kflag is not 6 (i.e. you're doing dynamics), you will want to something
+like this (each call to bren_1_step simulates info->:
+      for(; whatever; )
+	  bren_1_step(info, kflag);
+
+ Or if you don't want to copy the Fortran data into the info struct each
+step, you can do something like this:
+
+      for(; whatever; )
+      {
+	  bren_1_step(NULL, kflag);
+          if(moon_is_blue) update_info(info);
+      }
+
+ See brenffile.c and brenfras.c for samples.
+
+From Tim Freeman's annotations to Brenner's Fortran code:
+KFLAG says what sort of work to do.
+It is read from input.d, third number on the first line.
+See cases in subroutine thermos in thermostats.f. 
+-1 is friction plus random force.
+1 is a Berndstein thermostat.
+2 means to set all the velocities to zero after each timestep.
+3 is an Evans-Hoover thermostat.
+4 has no significance whatsoever; I'm hoping that will give me
+  simple physics.
+5 also calls BERE to do a Berndstein thermostat.
+6 means to do energy minimization.
+8 also has significance, but I don't know what it means yet.
+  vscale sets kflag to 8 temporarily then restores it to its old
+  value.
+

@@ -1,0 +1,167 @@
+Return-Path: lij@mse.eng.ohio-state.edu
+Delivery-Date: Tue Apr  8 20:03:56 2003
+Return-Path: <lij@mse.eng.ohio-state.edu>
+Received: from localhost (localhost [127.0.0.1])
+	by mse-jl1.eng.ohio-state.edu (8.11.2/8.11.2) with ESMTP id h3903uf00365
+	for <lij@localhost>; Tue, 8 Apr 2003 20:03:56 -0400
+Received: from er6s1.eng.ohio-state.edu [164.107.76.2]
+	by localhost with POP3 (fetchmail-5.7.4)
+	for lij@localhost (single-drop); Tue, 08 Apr 2003 20:03:56 -0400 (EDT)
+Received: from CONVERSION-DAEMON.er6s1.eng.ohio-state.edu by
+ er6s1.eng.ohio-state.edu (PMDF V6.2 #34302)
+ id <01KUHWJQRW1S9ZZXBG@er6s1.eng.ohio-state.edu> for
+ lij@er6s1.eng.ohio-state.edu (ORCPT lij@mse.eng.ohio-state.edu); Tue,
+ 08 Apr 2003 20:02:21 -0400 (EDT)
+Received: from mse-jl1.eng.ohio-state.edu
+ (mse-jl1.eng.ohio-state.edu [164.107.79.177]) by er6s1.eng.ohio-state.edu
+ (PMDF V6.2 #34302) with ESMTP id <01KUHWJQ0D8M9ZLHUC@er6s1.eng.ohio-state.edu>
+ for lij@er6s1.eng.ohio-state.edu (ORCPT lij@mse.eng.ohio-state.edu); Tue,
+ 08 Apr 2003 20:02:18 -0400 (EDT)
+Received: from mse.eng.ohio-state.edu (lij@localhost)
+ by mse-jl1.eng.ohio-state.edu (8.11.2/8.11.2) with ESMTP id h3902LQ00324; Tue,
+ 08 Apr 2003 20:02:21 -0400
+Date: Tue, 08 Apr 2003 20:02:21 -0400
+From: Ju Li <lij@mse.eng.ohio-state.edu>
+Subject: Re: paper
+In-reply-to: "Your message of Mon, 07 Apr 2003 16:34:27 PDT."
+ <5.1.0.14.2.20030407163157.02d84c70@poptop.llnl.gov>
+To: Wei Cai <caiwei@llnl.gov>
+Cc: lij@mse.eng.ohio-state.edu
+Message-id: <200304090002.h3902LQ00324@mse-jl1.eng.ohio-state.edu>
+Content-id: <322.1049846541.1@mse.eng.ohio-state.edu>
+MIME-version: 1.0
+Content-type: text/plain; charset=us-ascii
+X-Authentication-warning: mse-jl1.eng.ohio-state.edu: lij owned process doing
+ -bs
+Original-recipient: rfc822;lij@mse.eng.ohio-state.edu
+
+Wei,
+
+The following (a) and (b) needs to be done:
+
+> At 07:34 PM 1/25/2003 -0500, you wrote:
+> >Wei,
+> >
+> >First off, please read
+> >
+> >http://164.107.79.177/paper/Wang02/main.pdf
+> >
+> >and also give Vasily a copy. I cannot find your F-S results about Mo
+> >screw dislocation core energy, so this is another check. We would
+> >like to send to PRB in a week, so please read now and provide feedback.
+> >
+> >For the Si-screw, indeed there is some residual Virial stress, mostly
+> >non-shear character, even though linear elasticity predicts zero
+> >Virial stress at this particular geometry. But, if I relax the Virial
+> >stress, it can only lower my atomistic energy, and maybe core energy.
+> >
+> >As you said, we can do it in two steps:
+> >
+> >(a) Could you check if your relaxation code gives a total atomistic energy
+> >increment of -5317.838927 - 1152 x -4.630000 = 15.921073 eV
+> >for the configuration in
+> >http://164.107.79.177/Stuff/Wei/Dipole/screw
+> >
+> >(b) My elastic energy sum, if ignoring Ecore and r0 constants, gives
+> >Eelastic = 15.6436 eV for the above supercell
+> >
+> >With:
+> >Eatomistic = Eelastic + 2*(Ecore-PE*log(r0[A]))*linelength;
+> >here, PE = 0.359818 eV/A, linelength = 7.68052 A,
+> >r0 = b = 3.840262 A,
+> >(details in http://164.107.79.177/Stuff/Wei/Dipole/Sum/dipole.out)
+> >
+> >I get Ecore = 0.5022 eV/A
+> >
+> >I think, based on the spirit of linear elasticity, it is better to
+> >divide everything by the original, undeformed length.
+> >
+> >Ju.
+> >
+> >
+> > > Hi, Li Ju,
+> > > Sorry for the delay again.  So we still have this difference of 0.025eV/A
+> > > to resolve.  I read through the data you posted on the web and I am
+> > > thinking what would be the best way to resolve this.  I can give you my
+> > > codes (matlab+C) for anisotropic elasticity image energy 
+> > calculation.  They
+> > > are on ASM and I can tar them and put it on some public directory.  But I
+> > > am not sure whether that's the best way.  These codes are not written in 
+ a
+> > > user-friendly manner, and you know it is a pain to go through other
+> > > people's code and try to figure out how it works. But I can give them to
+> > > you if you want, that's no problem.
+> > >
+> > > So let's think about this situation again.  The discrepancy could come 
+> > from
+> > > either atomistic energy or from image energy calculations.  In fact there
+> > > are several places that different approaches of doing things may introduc
+ e
+> > > discrepancies.  First, we need to relax stress in the cell.  (By the 
+> > way, I
+> > > see that there are still residual stress in screw.out.  Is it
+> > > intentional?)  But after stress relaxation, the cell dimension will
+> > > change.  And which value do we use for dislocation length, 2[110] or the
+> > > relaxed cell length along z direction?  In fact, I don't even remember 
+> > what
+> > > did I use by now.  Also, when we calculate the image energy, do we use th
+ e
+> > > cell dimension as crystallographic vectors (e.g. 8[111]), or we use the
+> > > cell dimension of the relaxed configuration?  (I seemed to have used the
+> > > former.)  I am not sure these "explain" the discrepancy we see here, but
+> > > they are the things that caught my attention when I was doing core energy
+> > > calculations.  There is a certain degree of uncertainty when we go from
+> > > atomistics to linear elasticity theory, isn't it?  And this may have a lo
+ t
+> > > to do with the conventions one chooses, and may not have much physics 
+> > in it.
+> > >
+> > > Anyway, but if our goal is to make sure there is no bug in the code for
+> > > computing the image energy, I guess certain simpler things can be
+> > > done.  For example, if you give me exactly the cell dimension, dislocatio
+ n
+> > > dipole orientation, elastic constants which you used in your 
+> > calculation, I
+> > > can quickly run my codes again and give my numbers back to you.  To 
+> > make it
+> > > a fair comparison, don't give me your numbers (image energies), so I don'
+ t
+> > > have the flexibility of "biasing" my predictions.  If we can get the same
+> > > numbers, at least that's a progress, isn't it?
+> > >
+> > > Let me know what you think of it.  Cheers!
+> > > Wei
+> > >
+> > > At 04:43 PM 12/20/2002 -0500, you wrote:
+> > > >Wei,
+> > > >
+> > > >I am finally done writing a general PBC dipole library.
+> > > >(http://mse-jl1.eng.ohio-state.edu/Stuff/Wei/Elasticity/) I think it
+> > > >now works, after realizing that the dipole self-energy is
+> > > >2Ecore+2W*log(R/r0) where R is the Cartesian distance; but
+> > > >dipole-dipole coupling energy is not 2W*log(Rp*Rm/R^2) but one must
+> > > >use scaled distances like the denominator in Hirth and Lothe p.455
+> > > >(13-129) and then do modal sum. I don't know if it is in the
+> > > >Phil. Mag. paper, but it is not very explicit in the PRL paper and
+> > > >your thesis, and has lead to significant pain and suffering.
+> > > >
+> > > >My core energy results for bond-centered SW-Si shuffle screw are in
+> > > >http://mse-jl1.eng.ohio-state.edu/Stuff/Wei/Dipole/results.txt which
+> > > >differs by 0.025 eV/A from your published result of 0.526 eV/A.  You
+> > > >understand the importance of significant digits in this benchmark,
+> > > >therefore I implore you to look at your SW-parameters, lattice
+> > > >constants and elastic constants used. Mine are in,
+> > > >http://mse-jl1.eng.ohio-state.edu/Stuff/Wei/Dipole/relax.h
+> > > >http://mse-jl1.eng.ohio-state.edu/Stuff/Wei/Dipole/screw.out
+> > > >
+> > > >You could download my executable
+> > > >http://mse-jl1.eng.ohio-state.edu/Stuff/Wei/Dipole/relax
+> > > >and input file
+> > > >http://mse-jl1.eng.ohio-state.edu/Stuff/Wei/Dipole/input
+> > > >and play with it a bit.
+> > > >
+> > > >If you could show me your raw program and data, I can cross-check them
+> > > >too.
+> > > >
+> > > >Ju.
+> > >

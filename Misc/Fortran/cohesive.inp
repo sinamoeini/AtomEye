@@ -1,0 +1,72 @@
+LDA data set label:
+25%-Si 2H-SiC emax=28 6x6x6 nrk=63 xc=ca
+
+Number of atomic species: 2
+Species: Si     1
+Species:  C     3
+
+Reference state: _CDiamond
+Composition: 0  2
+LDA total energy (eV/atom): -155.564816
+Exp't cohesive energy (eV/atom): -7.37
+
+Reference state: new3C
+Composition: 1  1
+LDA total energy (eV/atom): -132.062877
+Exp't cohesive energy (eV/atom): -6.34
+
+LDA total energy (Ry) and cell volume (au^3):
+190.    -41.8811184872
+195.    -41.9014811017
+200.    -41.9163915968
+202.5   -41.9228803587
+205.    -41.9291950236
+207.5   -41.9336128480
+210.    -41.9372295700
+212.5   -41.9399236071
+213.75  -41.9410605654
+215.    -41.9425893560
+216.25  -41.9435836869
+217.5   -41.9438245165
+218.75  -41.9446105439
+220.    -41.9455410386
+221.25  -41.9451935141
+222.5   -41.9460597154
+223.75  -41.9457873376
+225.    -41.9457820536
+226.25  -41.9454927408
+227.5   -41.9450728492
+228.75  -41.9448157585
+230.    -41.9441106271
+231.25  -41.9432293721
+232.5   -41.9422892324
+233.75  -41.9411224445
+235.    -41.9398757521
+237.5   -41.9371307672
+240.    -41.9345006084
+242.5   -41.9308542135
+245.    -41.9271944423
+247.5   -41.9230213883
+250.    -41.9181434846
+260.00  -41.8974860517
+-9999.  -9999.
+
+Fit to (-1: Universal binding  >=0: Taylor expansion):
+-1
+
+Parameters bound (-9999 means default):
+Lowest Total Cell Energy (Ry): 
+-9999  -9999  -9999
+Equilibrium Cell Volume (au^3): 
+-9999  -9999  -9999
+Bulk Modulus (MBar): 
+-9999  -9999  -9999
+
+DEL: 0.3
+NDIV: 10
+Save composite energies on files (*.fit,*.m): 2H25
+Number of mesh points: -9999
+Minimum volume/atom (A^3): -9999.
+Maximum volume/atom (A^3): -9999.
+
+% cohesive < cohesive.inp | tee output

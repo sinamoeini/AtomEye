@@ -1,0 +1,64 @@
+Output CFG file (default=dipole):
+default
+
+Save screen output to file (default=*.out, NULL=don't):
+default
+
+CFG file of a stress-free crystal (default=perfect_crystal):
+default
+
+Elastic constant matrix in the frame CFG is presented [GPa]:
+C11     C12     C13     C14     C15     C16
+C21     C22     C23     C24     C25     C26
+C31     C32     C33     C34     C35     C36
+C41     C42     C43     C44     C45     C46
+C51     C52     C53     C54     C55     C56
+C61     C62     C63     C64     C65     C66
+---------------------------------------------------------------------
+181.898446   68.105754   74.848941   0          0          9.536307 
+ 68.105754  188.641633   68.105754  -0          0         -0        
+ 74.848941   68.105754  181.898446  -0         -0         -9.536307 
+   0          -0          -0         46.781565  -9.536307   0        
+   0           0          -0         -9.536307  53.524752   0        
+   9.536307   -0          -9.536307   0          0         46.781565 
+
+Burgers vector of the first dislocation (whose xi is // the third edge
+of the PBC box) in the frame CFG is presented [A]:
+0 0 3.84026141659391
+
+First dislocation reduced coordinates:
+0.260417  0.527778
+
+Second dislocation reduced coordinates:
+0.760417  0.527778
+
+Remove atoms closer than [A] (default=0.5, negative means don't):
+default
+
+Control option (choose 0 to 4, default=4):
+default
+
+(Option 0) H-matrix (new PBC box) [A]:
+53.2122231030966        0                       0
+0                       56.4400856973166        0
+0                       0                       7.68052283318781
+
+(Option 1) D-matrix (H=H0*(1+D), strain=(D+D^T)/2):
+0                       0                       0
+0                       0                       0
+0                       0                       0
+
+(Option 2) Local stress at the first dislocation [GPa]:
+0                       0                       0
+0                       0                       0
+0                       0                       0
+
+(Option 3) Local stress at the second dislocation [GPa]:
+0                       0                       0
+0                       0                       0
+0                       0                       0
+
+(Option 4) Supercell Virial stress average [GPa]:
+0                       0                       0
+0                       0                       0
+0                       0                       0
