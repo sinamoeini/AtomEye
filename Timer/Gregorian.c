@@ -28,7 +28,7 @@ double datenummx (GregorianDate *G)
         cdm[G->month-1] + G->day;
     if (G->month > 2)
     {
-        if ((G->year%4 == 0) && (G->year%100 != 0) || (G->year%400 == 0))
+        if (((G->year%4 == 0) && (G->year%100 != 0)) || (G->year%400 == 0))
         {
             result += 1.;
         }
@@ -123,7 +123,7 @@ void datevecmx (double datenum, GregorianDate *G)
 
     G->year = y;
     iy = (int) y;
-    leap = ((iy%4 == 0) && (iy%100 != 0) || (iy%400 == 0));
+    leap = (((iy%4 == 0) && (iy%100 != 0)) || (iy%400 == 0));
 
     cdm = (leap ? cdml : cdm0);
 
