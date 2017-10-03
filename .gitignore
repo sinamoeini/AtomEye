@@ -1,3 +1,6 @@
 AtomEye.xcodeproj
 DerivedData
 obj
+lib_extra
+include_extra
+tmp

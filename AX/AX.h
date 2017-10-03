@@ -37,6 +37,7 @@
 #define _AX_USE_SHM
 #endif
 
+#include <zlib.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/keysym.h>
