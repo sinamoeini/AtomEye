@@ -40,9 +40,8 @@ const Atom_coordination_color ATOM_COORDINATION_COLOR
     {"DeepPink",          255/255., 20/255.,  147/255.},
 };
 
-const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
-#include "Mendeleyev.c"
-};
+extern const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1];
+
 
 /* From our periodic table, find the atom Z corresponding */
 /* to the "symbol" string. If not found, return 0.        */

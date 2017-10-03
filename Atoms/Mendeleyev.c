@@ -1,4 +1,6 @@
-{" A",  "Unknown",  
+#include "Atoms.h"
+const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
+{" A",  "Unknown",
  1,  1.00794,  1,  1,  
  "IA",  "IA",  "hydrogen group non-metal",  "H,Li,Na,K,Rb,Cs,Fr",  
  "1s",  13.598,  
@@ -986,5 +988,5 @@
  NVL, NVL, NVL, 
  "radioactive solid",  NVL, NVL, NVL, 
  "unavailable",  NVL,  "unavailable",  NVL, NVL, NVL,  NVL,NVL,NVL, 
- NVL,  1,  0.6431372549, 0.6666666667, 0.6784313725},
-
+ NVL,  1,  0.6431372549, 0.6666666667, 0.6784313725}
+};
