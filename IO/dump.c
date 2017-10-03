@@ -26,7 +26,8 @@
 void fDump (FILE *fp, char *linefmt, int minline, int maxline, void *A, 
 	    int minchar, int maxchar)
 {
-    int i, j, tokens, line_bytes=0, line_tokens=0;
+    int i, j, tokens, line_tokens=0;
+    size_t line_bytes=0;
     char *obj_start, *obj_end, *inert, *start, *end=NULL, *r;
     char *format, *buf, *s, islong, unprinted, c, d, e, f;
     unsigned char *B;
