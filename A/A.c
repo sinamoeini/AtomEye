@@ -5,7 +5,7 @@
 /*******************************************/
 
 #include "A.h"
-#include "Icon/icon.c"
+#include "icon.c"
 
 /* from libAtoms: */
 Aapp_Define_Config;
