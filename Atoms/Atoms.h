@@ -19,8 +19,8 @@
 #include <IO.h>
 #include <VecMat.h>
 #include <VecMat3.h>
-#include "NIST.h"
 #endif
+#include "NIST.h"
 /* Config.c: */
 /****************************************************/
 /* Minimal Specification of atomistic configuration */
