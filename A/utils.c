@@ -65,8 +65,9 @@ AX_3D_Lines *plane_wireframe
 
 
 /* handles 0-9,a-e numeral key events */
-bool treat_numeral_event (int iw, int number)
+bool treat_numeral_event (int iw, KeySym __number)
 {
+    int number=(int) __number;
     char danswer[MAX_FILENAME_SIZE], buffer[MAX_FILENAME_SIZE], *answer;
     int j;
     double tmp[3], dxkj[4], dxij[4];

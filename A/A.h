@@ -194,7 +194,7 @@ void evaluate_geo_measures();
 /* utils.c: */
 AX_3D_Lines *plane_wireframe
 (double dx[3], double d0, AX_Float r, AX_Float g, AX_Float b);
-bool treat_numeral_event (int iw, int number);
+bool treat_numeral_event (int iw, KeySym number);
 bool shift_filter_plane (int iw, double delta);
 bool capture_png (int iw);
 bool capture_jpg (int iw);
