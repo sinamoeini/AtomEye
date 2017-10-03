@@ -39,6 +39,7 @@ double datenummx (GregorianDate *G)
 
 
 /* Matlab date serial number from ISO 8601 input string like "1970-01-01" */
+extern char *IOClone (char *str);
 double datenum29 (char *str)
 {
     GregorianDate G[1]={{0,1,1,0,0,0}};
