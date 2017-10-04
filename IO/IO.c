@@ -545,7 +545,7 @@ int main (int argc, char *argv[])
 int command_exists (char *command)
 {
     char *path, *p, *q, filename[PATH_MAX+1];
-    int commandlen, plen;
+    size_t commandlen, plen;
     if (strchr(command, '/')) return(Fexecutable(command));
     if ((path=getenv("PATH")) == NULL)
         pe("command_exists: can't get $PATH from environment.\n");
