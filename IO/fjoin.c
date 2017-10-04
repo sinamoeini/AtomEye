@@ -99,7 +99,7 @@ FILE *fjoin (int number_of_streams, ...)
         while ( read(fd[0],&c,1) > 0 )
             for (i=0; i<number_of_streams; i++)
             {
-                while ( (j=write(streams_fd[i],&c,1)) == 0 );
+                while ( (j=(int)write(streams_fd[i],&c,1)) == 0 );
                 if (j < 0)
                 {
                     printf ("error: fjoin: errno %d writing to the %s "

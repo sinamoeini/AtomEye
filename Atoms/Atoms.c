@@ -87,7 +87,7 @@ int rebind_ct (Alib_Declare_Config, char *specification,
     double totalweight, weight[MENDELEYEV_MAX+1];
     REALLOC( rebind_ct, *tp, *np, Tp );
     if (specification==NULL) specification="";
-    i = strlen(specification);
+    i = (int) strlen(specification);
     if (!isfactor(SYMBOL_CHAR,i))
         pe ("rebind_ct: length of \"%s\" is not an integer multiple\n"
             "of std. chemical symbol string length %d.\n", specification,

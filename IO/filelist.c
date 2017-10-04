@@ -30,7 +30,7 @@ size_t numerically_sorted_glob (char *seed_fname, glob_t *globbuf)
         if (ISNOTDIGIT(*q)) break;
     prefix = IOClone(seed_fname);
     prefix[q+1-seed_fname] = EOS;
-    pattern = IOalloc(strlen(prefix)+5*MAXDIGITS+strlen(suffix)+1);
+    pattern = IOalloc((int) (strlen(prefix)+strlen(suffix))+5*MAXDIGITS+1);
     for (i=1; i<MAXDIGITS; i++)
     {
         strcpy (pattern, prefix);
