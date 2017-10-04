@@ -1,6 +1,6 @@
 <title>AtomEye: atomistic configuration viewer</title>
 
-<center>
+<p align="center">
 
 # AtomEye: atomistic configuration viewer
 
@@ -12,7 +12,7 @@ AtomEye will always be free. Please [cite](http://scholar.google.com/scholar?cit
 [J. Li, _Modelling Simul. Mater. Sci. Eng._ **11** (2003) 173](Doc/Li03a.pdf)
 if you use figures and movies produced by AtomEye, so your colleagues may know about this free tool. Thanks.
 
-</center>
+</p>
 
 * * *
 
