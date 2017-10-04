@@ -789,14 +789,18 @@ Some environments forbid the use of Meta or Alt key. In those cases, having Caps
 
 </a>
 
-<a name="FAQ">*   Some Linux machines give semi-transparent Atomeye windows, how to correct it?
+<a name="FAQ">
+
+*   Some Linux machines give semi-transparent Atomeye windows, how to correct it?
 
 **Answer**: Try adding
 
 <pre>export XLIB_SKIP_ARGB_VISUALS=1
 </pre>
 
-to your .bashrc file.*   Is there a way to display what value each color in a color-mappped variable represent (color bar)?
+to your .bashrc file.
+
+*   Is there a way to display what value each color in a color-mappped variable represent (color bar)?
 
 **Answer**: If you save the screenshot by pressing 'j' or 'p' or 'e', there should be an extra colorbar file saved in .eps with numerical labels.
 
