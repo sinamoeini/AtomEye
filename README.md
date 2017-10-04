@@ -791,7 +791,7 @@ Some environments forbid the use of Meta or Alt key. In those cases, having Caps
 
 <a name="FAQ">
 
-*   Some Linux machines give semi-transparent Atomeye windows, how to correct it?
+1.   Some Linux machines give semi-transparent Atomeye windows, how to correct it?
 
 **Answer**: Try adding
 
@@ -800,12 +800,12 @@ Some environments forbid the use of Meta or Alt key. In those cases, having Caps
 
 to your .bashrc file.
 
-*   Is there a way to display what value each color in a color-mappped variable represent (color bar)?
+2.  Is there a way to display what value each color in a color-mappped variable represent (color bar)?
 
 **Answer**: If you save the screenshot by pressing 'j' or 'p' or 'e', there should be an extra colorbar file saved in .eps with numerical labels.
 
-</a>
-2.  <a name="FAQ">I encounter the following error message:
+
+3.  I encounter the following error message:
 
 <pre>ATOM_COORDINATION_MAX = 24 exceeded
 </pre>
