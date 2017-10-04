@@ -809,14 +809,10 @@ to your .bashrc file.
 
 <pre>ATOM_COORDINATION_MAX = 24 exceeded
 </pre>
-
 or
-
 <pre>error: Imakespace: min=0 max=2744 jammed between i=1262 and i+1.
 </pre>
-
 and AtomEye quits. What's the problem?
-
 **Answer**: The above error message means some atoms in the configuration are getting too close to each other. The number of atoms within the default cutoff radii of first-nearest-neighbors exceeds 24\. This usually means there is some pathology in the configuration (maybe you have miscalculated the atomic geometry? maybe your time-integrator has blown up?).
 
 </a>
