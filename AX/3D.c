@@ -341,7 +341,7 @@ int main (int argc, char *argv[])
 
 /* (Re)assign 3D polygon by x0,y0,z0, x1,y1,z1, ... interface */
 AX_3D_Polygon *AX_3D_PolygonAssign
-(AX_3D_Polygon *p, int nVertex, AX_Float r, AX_Float g, AX_Float b, ...)
+(AX_3D_Polygon *p, int nVertex, AX_Float r, AX_Float g, double b, ...)
 {
     register int i;
     AX_Float x0[3], x1[3], tmp=0;
@@ -380,7 +380,7 @@ AX_3D_Polygon *AX_3D_PolygonAssign
 
 /* (Re)assign 3D polygon by *x0, *x1, ... interface */
 AX_3D_Polygon *AX_3D_PolygonASSIGN
-(AX_3D_Polygon *p, int nVertex, AX_Float r, AX_Float g, AX_Float b, ...)
+(AX_3D_Polygon *p, int nVertex, AX_Float r, AX_Float g, double b, ...)
 {
     register int i;
     AX_Float *xp, x0[3], x1[3], tmp=0;

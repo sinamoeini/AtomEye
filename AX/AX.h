@@ -1814,11 +1814,11 @@ typedef struct
 
 /* (Re)assign 3D polygon by x0,y0,z0, x1,y1,z1, ... interface */
 AX_3D_Polygon *AX_3D_PolygonAssign
-(AX_3D_Polygon *p, int nVertex, AX_Float r, AX_Float g, AX_Float b, ...);
+(AX_3D_Polygon *p, int nVertex, AX_Float r, AX_Float g, double b, ...);
 
 /* (Re)assign 3D polygon by *x0, *x1, ... interface */
 AX_3D_Polygon *AX_3D_PolygonASSIGN
-(AX_3D_Polygon *p, int nVertex, AX_Float r, AX_Float g, AX_Float b, ...);
+(AX_3D_Polygon *p, int nVertex, AX_Float r, AX_Float g, double b, ...);
 
 #define AX_3D_PolygonCopy(p,pc,i) { (pc)->nVertex = (p)->nVertex; \
   for (i=0; i<3*(p)->nVertex; i++) (pc)->x[i] = (p)->x[i]; }
