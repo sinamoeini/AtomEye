@@ -29,8 +29,8 @@ static double bracket[DIMENSION][2];
 void Config_load_from_Gaussian_FChk
 (char *FChk_fname, V3 padding, FILE *info, Alib_Declare_Config)
 {
-    int i, j, k, n;
-    char *p, *q, linebuffer[FChk_LINESIZE], buf[FGETS_MAXSIZE];
+    int i, j, n;
+    char *p, linebuffer[FChk_LINESIZE], buf[FGETS_MAXSIZE];
     double tmp[DIMENSION], HI[DIMENSION][DIMENSION];
     FILE *in;
 
