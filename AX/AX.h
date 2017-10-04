@@ -673,8 +673,12 @@ void AX_cmap (int cmap_idx, double x, double *r, double *g, double *b);
   (AX_display[iw], AX_event[iw].xkey.keycode, AX_event[iw].xkey.state)
 
 /* naked key: "suppose without modifiers" */
+#include <X11/XKBlib.h>
+#define AXKeysym0(iw) XkbKeycodeToKeysym\
+  (AX_display[iw], AX_event[iw].xkey.keycode, 0, 0)
+/*
 #define AXKeysym0(iw) XKeycodeToKeysym\
-  (AX_display[iw], AX_event[iw].xkey.keycode, 0)
+  (AX_display[iw], AX_event[iw].xkey.keycode, 0)*/
 
 
 /* http://www.mit.edu/afs/net/tools/diff.src/sun4src/play/play.c */
