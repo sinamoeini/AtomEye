@@ -5,7 +5,8 @@
 /*******************************************/
 
 #include "A.h"
-#include "icon.c"
+extern char *icon[];
+extern int icon_sz;
 
 /* from libAtoms: */
 Aapp_Define_Config;

@@ -336,7 +336,7 @@ int AX_save_pixmap_as_eps (int iw, int quality, char *file_name);
 #define AX_NO_SUITABLE_ICON_SIZES 2
 /* Set the largest available icon from an n-line stream of .xpm data */
 int AXSetIcon (int iw, int n, char *icon[]);
-#define AXSetICON(iw,icon) AXSetIcon(iw,sizeof(icon)/sizeof(char *),icon)
+#define AXSetICON(iw,icon) AXSetIcon(iw,icon_sz,icon)
 #define AXSETICON(iw) AXSetICON(iw,icon)
 
 /* Check "win" and all its children for a window with "identifier" string in */

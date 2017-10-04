@@ -1,4 +1,5 @@
-static char *icon[]={
+#include <stdio.h>
+char *icon[]={
 
 
 
@@ -1264,3 +1265,4 @@ static char *icon[]={
 
 ,
 };
+int icon_sz =(int) (sizeof(icon)/sizeof(char*));
