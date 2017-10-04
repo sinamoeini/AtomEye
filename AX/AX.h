@@ -92,7 +92,7 @@ typedef unsigned long AX_Pixel;
 
 /* AX_Carrier (unsigned int): interface to Direct Pixmap Access */
 /* like AX_set(). sizeof(AX_Carrier) must >= possible AX_bytes. */
-typedef unsigned long AX_Carrier;
+typedef unsigned int AX_Carrier;
 #define AX_CARRIER(p)  ((AX_Carrier)(p))
 #define AX_CARRIER2PIXEL(c)  AX_PIXEL(c)
 #define AX_PIXEL2CARRIER(p)  AX_CARRIER(p)
