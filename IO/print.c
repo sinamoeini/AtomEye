@@ -488,10 +488,10 @@ void Sprint (FILE *fp, char *sole_fmt, double *A, int rows, int cols,
 		}
 	    if ( (q=strchr(buf, '.')) != NULL )
 	    {
-		if (q-buf > pre_dot[j]) pre_dot[j] = q-buf;
-		if ((k=eos(buf)-q-1) > aft_dot[j]) aft_dot[j] = k;
+		if (q-buf > pre_dot[j]) pre_dot[j] = (int) (q-buf);
+		if ((k=(int) (eos(buf)-q)-1) > aft_dot[j]) aft_dot[j] = k;
 	    }
-	    else if ((k=strlen(buf)) > pre_dot[j]) pre_dot[j] = k;
+	    else if ((k=(int) strlen(buf)) > pre_dot[j]) pre_dot[j] = k;
 	}
     }
     

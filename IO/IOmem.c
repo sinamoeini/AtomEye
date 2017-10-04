@@ -40,7 +40,7 @@ char *IOClone (char *str)
 {
     char *c, *d;
     for (c=str; *c!=EOS; c++);
-    d = IOalloc(c-str+1);
+    d = IOalloc((int) (c-str)+1);
     for (c=str; *c!=EOS; c++) d[c-str] = *c;
     d[c-str] = EOS;
     return (d);

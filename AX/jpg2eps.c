@@ -880,7 +880,7 @@ int jpg2eps(char *filename_jpg, char *filename_eps, char *options)
             exit(1);
     }
     JPEGtoPS(&image, outfile);      /* convert JPEG data */
-    argc = ftell(outfile);
+    argc = (int) ftell(outfile);
     fclose(image.fp);
     fclose(outfile);
 #ifndef _OLD_MAIN_TEST
