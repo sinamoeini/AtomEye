@@ -811,7 +811,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.95,  1.8775,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Th",  "Thorium",  
- 90,  232.0381,  7,  3.600000e+00,  
+ 90,  232.0381,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Ce,Th",  
  "6d2 7s2",  6.95,  
  1.1,  1.3,  NVL, 
@@ -820,7 +820,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.8,  1.7975,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Pa",  "Protactinium",  
- 91,  231.0359,  7,  3.600000e+00,  
+ 91,  231.0359,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Pr,Pa",  
  "5f2 6d 7s2",  NVL, 
  1.1,  1.5,  NVL, 
@@ -829,7 +829,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.8,  1.6086,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {" U",  "Uranium",  
- 92,  238.0289,  7,  3.600000e+00,  
+ 92,  238.0289,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Nd,U",  
  "5f3 6d 7s2",  6.08,  
  1.2,  1.38,  NVL, 
@@ -838,7 +838,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.75,  1.5683,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Np",  "Neptunium",  
- 93,  237.0482,  7,  3.600000e+00,  
+ 93,  237.0482,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Pm,Np",  
  "5f4 6d 7s2",  NVL, 
  1.2,  1.36,  NVL, 
@@ -847,7 +847,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.75,  1,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Pu",  "Plutonium",  
- 94,  244.0642,  7,  3.600000e+00,  
+ 94,  244.0642,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Sm,Pu",  
  "5f6 7s2",  5.8,  
  1.2,  1.28,  NVL, 
@@ -856,7 +856,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.75,  1,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Am",  "Americium",  
- 95,  243.0614,  7,  3.600000e+00,  
+ 95,  243.0614,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Eu,Am",  
  "5f7 7s2",  6,  
  1.2,  1.3,  NVL, 
@@ -865,7 +865,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.75,  1,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Cm",  "Curium",  
- 96,  247.0703,  7,  3.600000e+00,  
+ 96,  247.0703,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Gd,Cm",  
  "5f7 6d 7s2",  NVL, 
  1.2,  1.3,  NVL, 
@@ -874,7 +874,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  NVL,  1,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Bk",  "Berkelium",  
- 97,  247.0703,  7,  3.600000e+00,  
+ 97,  247.0703,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Tb,Bk",  
  "5f9 7s2",  NVL, 
  1.2,  1.3,  NVL, 
@@ -883,7 +883,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  NVL,  1,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Cf",  "Californium",  
- 98,  251.0796,  7,  3.600000e+00,  
+ 98,  251.0796,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Dy,Cf",  
  "5f10 7s2",  NVL, 
  1.2,  1.3,  NVL, 
@@ -892,7 +892,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.6,  1.46,  0.1, 0.7, 0.3},
 
 {"Es",  "Einsteinium",  
- 99,  252.0829,  7,  3.600000e+00,  
+ 99,  252.0829,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Ho,Es",  
  "5f11 7s2",  NVL, 
  1.2,  1.3,  3.5,  
@@ -901,7 +901,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  1.6,  1.752,  0.1, 0.3, 0.7},
 
 {"Fm",  "Fermium",  
- 100,  257.0951,  7,  3.600000e+00,  
+ 100,  257.0951,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Er,Fm",  
  "5f12 7s2",  NVL, 
  1.2,  1.3,  NVL, 
@@ -910,7 +910,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  NVL,  1,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Md",  "Mendelevium",  
- 101,  258.0986,  7,  3.600000e+00,  
+ 101,  258.0986,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Tm,Md",  
  "5f13 7s2",  NVL, 
  1.2,  1.3,  NVL, 
@@ -919,7 +919,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  NVL,  1,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"No",  "Nobelium",  
- 102,  259.1009,  7,  3.600000e+00,  
+ 102,  259.1009,  7,  NVL,
  "actanoids",  "actanoids",  "actinide series rare earth",  "Yb,No",  
  "5f14 7s2",  NVL, 
  NVL, 1.3,  NVL, 
@@ -928,7 +928,7 @@ const struct Mendeleyev MENDELEYEV [MENDELEYEV_MAX+1] = {
  NVL,  1,  0.6431372549, 0.6666666667, 0.6784313725},
 
 {"Lr",  "Lawrencium",  
- 103,  260.1053,  7,  3.600000e+00,  
+ 103,  260.1053,  7,  NVL,  
  "actanoids",  "actanoids",  "actinide series rare earth",  "Lu,Lr",  
  "5f14 6d 7s2",  NVL, 
  NVL, 1.3,  NVL, 
