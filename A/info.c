@@ -457,7 +457,7 @@ void print_atom_quartet_info (int iw, int l, int k, int j, int i)
 } /* end print_atom_quartet_info() */
 
 
-static int *tag_atoms_in_monoclinic_filter
+static int tag_atoms_in_monoclinic_filter
 (V3 origin, M3 HH, double height, double xytolerance,
  int *selected, char *taglist)
 {
