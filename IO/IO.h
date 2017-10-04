@@ -266,14 +266,27 @@ typedef char TermString[TERMSIZE];
   (valtype==IOVAL_FLOAT)  ? (*FLOATP(ptr))  : \
   (valtype==IOVAL_DOUBLE) ? (*DOUBLEP(ptr)) : 0 )
 
+#ifndef ISINT
 #define ISINT(i)     ((i)==INT(i))
+#endif
+#ifndef ISDIGIT
 #define ISDIGIT(c)   ((((char)(c))>='0')&&(((char)(c))<='9'))
+#endif
+#ifndef ISLOWER
 #define ISLOWER(c)   ((((char)(c))>='a')&&(((char)(c))<='z'))
+#endif
+#ifndef ISUPPER
 #define ISUPPER(c)   ((((char)(c))>='A')&&(((char)(c))<='Z'))
+#endif
+#ifndef ISALPHA
 #define ISALPHA(c)   (ISLOWER(c)||ISUPPER(c))
+#endif
+#ifndef ISALNUM
 #define ISALNUM(c)   (ISDIGIT(c)||ISALPHA(c))
+#endif
+#ifndef ISBLANK
 #define ISBLANK(c)   ((((char)(c))==' ')||(((char)(c))=='\t'))
-
+#endif
 #define ISNOTINT(i)   ((i)!=INT(i))
 #define ISNOTDIGIT(c) ((((char)(c))<'0')||(((char)(c))>'9'))
 #define ISNOTLOWER(c) ((((char)(c))<'a')||(((char)(c))>'z'))
