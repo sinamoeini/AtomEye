@@ -193,7 +193,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
         }
     if ( *fmt_start == EOS )
     { 
-	fprintf (fp, format);
+    fprintf (fp, "%s", format);
 	fcr(fp);
 	return;
     }
@@ -202,7 +202,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
     if (fmt_start>=format)
     {
 	*fmt_start = EOS;
-	fprintf (fp, format);
+    fprintf (fp, "%s", format);
 	fcr(fp);
 	fmt_start++;
     }
@@ -239,7 +239,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
                     o[nobj].alignment=alignment;
                     for (r=&(o[nobj].crd[0][0]); *r!=EOS; r++);
                     snprintf(r, &(o[nobj].crd[0][MPRINT_MAX_COLS])-r+1,
-                             s.inert);
+                             "%s", s.inert);
                     for (; *r!=EOS; r++);
                     o[nobj].width = (int) (r - &(o[nobj].crd[0][0]));
                 }
@@ -256,7 +256,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
                     o[nobj].alignment=alignment;
                     for (r=&(o[nobj].crd[0][0]); *r!=EOS; r++);
                     snprintf(r, &(o[nobj].crd[0][MPRINT_MAX_COLS])-r+1,
-                             s.inert);
+                             "%s", s.inert);
                     for (; *r!=EOS; r++);
                     o[nobj].width = (int) (r - &(o[nobj].crd[0][0]));
                 }
@@ -319,7 +319,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
                         break;
                     default:
                         snprintf(r, &(o[nobj].crd[0][MPRINT_MAX_COLS])-r+1,
-                                 s.inert);
+                                 "%s", s.inert);
                 }
                 for (; *r!=EOS; r++);
                 o[nobj].width = (int) (r - &(o[nobj].crd[0][0]));
@@ -382,7 +382,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
     }
     if (*fmt_end != EOS)
     {
-	fprintf (fp, fmt_end);
+        fprintf (fp, "%s", fmt_end);
 	fcr(fp);
     }
     IOfree(s.eff);
@@ -508,7 +508,7 @@ void Sprint (FILE *fp, char *sole_fmt, double *A, int rows, int cols,
     }
     for (i=0; i<close_space; i++) *(r++) = ' ';
     *(r++) = close_char;
-    sprintf (r, p+2);
+    sprintf (r, "%s", p+2);
     Mfprintf (fp, fmt, A);
     return;
 } /* end Sprint() */
@@ -626,7 +626,7 @@ void Iprint (FILE *fp, char *sole_fmt, int *A, int rows, int cols,
     }
     for (i=0; i<close_space; i++) *(r++) = ' ';
     *(r++) = close_char;
-    sprintf (r, p+2);
+    sprintf (r, "%s", p+2);
     Mfprintf (fp, fmt, A);
     return;
 } /* end Iprint() */

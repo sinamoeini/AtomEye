@@ -1339,7 +1339,7 @@ int Asprintf (char c[], int cols, int rows, char *fmt, void *A)
             }  /* find escape sequence start and treat it */
             if (*start==EOS) break;  /* run out of commands */
         } /* loop over inert beginnings */
-        snprintf(r, &crd(i,cols)-r+1, inert);
+        snprintf(r, &crd(i,cols)-r+1, "%s", inert);
         while (*r != EOS) r++;
         if ( (int)(r - &crd(i,0)) > width )  width = (int)(r - &crd(i,0));
     } /* loop over row number i */

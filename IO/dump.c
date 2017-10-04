@@ -252,7 +252,7 @@ void fMump (FILE *fp, int rows, int cols, double *A)
     fprintf(fp, "this matrix is %d x %d (Row by Column)",
 	    rows, cols);
     fcr(fp);
-    fprintf(fp, sep); 
+    fprintf(fp, "%s", sep); 
     for (i=0; i<rows; i++)
 	for (j=0; j<cols; j++)
 	{
@@ -267,7 +267,7 @@ void fMump (FILE *fp, int rows, int cols, double *A)
 	    fprintf(fp, FMUMP_SPACING FMUMP_FORMAT, A[i*cols+j]);
 	}
     fcr(fp);
-    fprintf(fp, sep);
+    fprintf(fp, "%s", sep);
     fcr(fp);
     return;
 } /* end fMump() */
