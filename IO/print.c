@@ -241,7 +241,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
                     snprintf(r, &(o[nobj].crd[0][MPRINT_MAX_COLS])-r+1,
                              s.inert);
                     for (; *r!=EOS; r++);
-                    o[nobj].width = r - &(o[nobj].crd[0][0]);
+                    o[nobj].width = (int) (r - &(o[nobj].crd[0][0]));
                 }
                 alignment = s.value;
                 break;
@@ -258,7 +258,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
                     snprintf(r, &(o[nobj].crd[0][MPRINT_MAX_COLS])-r+1,
                              s.inert);
                     for (; *r!=EOS; r++);
-                    o[nobj].width = r - &(o[nobj].crd[0][0]);
+                    o[nobj].width = (int) (r - &(o[nobj].crd[0][0]));
                 }
                 if (!virgin_obj(o[nobj])) inc_nobj();
                 matrix = va_arg(ap, void *);
@@ -322,7 +322,7 @@ void Mvprintf (FILE *fp, char *fmt, va_list ap)
                                  s.inert);
                 }
                 for (; *r!=EOS; r++);
-                o[nobj].width = r - &(o[nobj].crd[0][0]);
+                o[nobj].width = (int) (r - &(o[nobj].crd[0][0]));
                 break;
             default:
                 printf ("error: Mvprintf: unrecognized "

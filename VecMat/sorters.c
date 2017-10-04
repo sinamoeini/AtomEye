@@ -581,7 +581,7 @@ void msort_Ju (int N,  double x[], int idx[], int option)
     
     /* mop up the rest with a reasonable sorter */
     if (a != idx+N)
-        qsort_numerical_recipes( idx+N-a, x, a, USE_OLD_IDX);
+        qsort_numerical_recipes( N % BASIC, x, a, USE_OLD_IDX);
     
     cell = BASIC;
     while ( cell < N )
