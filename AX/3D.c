@@ -3327,12 +3327,12 @@ int AX_3D_Cylinders_Zgrab (int iw, AX_3D_Cylinders *C, int gi, int gj)
         for (m=1; m<img[0].offset; m++)
             if (goffset == img[m].offset)
                 if (img[m].z <= AX_zmap[iw][goffset])
-                    return (C->cylinder[i]-C->CYLINDER);
+                    return (int)(C->cylinder[i]-C->CYLINDER);
         for (m=img[0].offset+1;
              m<img[0].offset+img[img[0].offset].offset; m++)
             if (goffset == img[m].offset)
                 if (img[m].z <= AX_zmap[iw][goffset])
-                    return (C->cylinder[i]-C->CYLINDER);
+                    return (int)(C->cylinder[i]-C->CYLINDER);
     }
     return(-1);
 } /* end AX_3D_Cylinders_Zgrab() */
