@@ -2418,7 +2418,7 @@ static void AX_sort_3D_Ellipsoids (AX_3D_Ellipsoids *E)
 /* Calculate coordinates in viewport frame and determine visibility */
 void AX_3D_Ellipsoids_Zdet (int iw, AX_3D_Ellipsoids *E)
 {
-    register AX_3D_Ellipsoid *ellipsoid;
+    register AX_3D_Ellipsoid *ellipsoid=NULL;
     register int m;
     AX_Float dx[3], X0[2], UU[3][3], K;
     int i;
@@ -2826,7 +2826,7 @@ const AX_Float table[2*AX_3D_CYLINDER_MESH] =
 /* Calculate coordinates in viewport frame and determine visibility */
 void AX_3D_Cylinders_Zdet (int iw, AX_3D_Cylinders *C)
 {
-    register AX_3D_Cylinder *cylinder;
+    register AX_3D_Cylinder *cylinder=NULL;
     register AX_3D_Cylinder_Power *power;
     register double tmp=0;
     int i, m;

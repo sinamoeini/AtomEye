@@ -7,7 +7,7 @@
 /**************************************/
 
 #include "Timer.h"
-
+#include <string.h>
 
 /************************************************************************/
 /* Multiple task, piecewise linear schedule manager:                    */
@@ -456,7 +456,7 @@ double schedules_calm (double t1, double t2, ...)
     va_start (ap, t2);
     while ((n=va_arg(ap,int)) > 0)
         for (q=va_arg(ap,ScheduleList **),i=0; i<n; i++)
-            if (this = schedulelist_const_period (q[i], t1, t2))
+            if ((this = schedulelist_const_period (q[i], t1, t2)))
             {
                 if (*this > tcalm) tcalm = *this;
             }

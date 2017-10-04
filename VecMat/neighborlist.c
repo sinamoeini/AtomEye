@@ -171,7 +171,7 @@ void Ilist_statistics
 /* Imakespace (faster than IMAKESPACE) does NOT preserve order. */
 void Imakespace (int idx[], int list[], int i, int min, int max)
 {
-    int j, k, a, left_shift; 
+    int j, k, a, left_shift=0; 
     /* look for left free space */
     for (j=i; (j>min)&&(idx[2*j]==idx[2*j-1]); j--);
     /* look for right free space */
@@ -230,7 +230,7 @@ void Iappend (int idx[], int list[], int value, int i, int min, int max)
 /* IMAKESPACE (slower than Imakespace) preserves list[] order   */
 void IMAKESPACE (int idx[], int list[], int i, int min, int max)
 {
-    int j, k, a, left_shift; 
+    int j, k, a, left_shift=0; 
     /* look for left free space */
     for (j=i; (j>min)&&(idx[2*j]==idx[2*j-1]); j--);
     /* look for right free space */

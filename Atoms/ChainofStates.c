@@ -241,7 +241,7 @@ void ChainofStates_Difference_Free(ChainofStates_Difference *cd)
 /* the number of new nodes to be added between original node i and i+1.  */
 void ChainofStates_Add_Nodes (int *plan, Alib_Declare_Config, ChainofStates *c)
 {
-    int i, iend, jend, k, m, sum;
+    int i, iend, jend, k, sum;
     double ratio;
     ChainofStates_Difference cd[1]={0};
 
@@ -427,7 +427,7 @@ void ChainofStates_NeighborlistPool_Free(ChainofStates_NeighborlistPool *Np)
 void ChainofStates_NeighborlistPool_Recreate
 (int cramped, ChainofStates *c, ChainofStates_NeighborlistPool *Np)
 {
-    int i, desired_size;
+    int desired_size;
     desired_size = cramped? 1 : c->N;
     if (desired_size != Np->size)
     {

@@ -7,7 +7,7 @@
 /**************************************/
 
 #include "Timer.h"
-
+#include <string.h>
 
 /******************************************************************/
 /* Real time watches of multiple (< TASKWATCH_MAX_RECORDS) tasks, */

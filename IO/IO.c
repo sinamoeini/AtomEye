@@ -1395,7 +1395,7 @@ void main()
 
 
 /* fork out a child process running slave_work_till_die() */
-void spinoff( void (*slave_work_till_die)() )
+void spinoff( void (*slave_work_till_die)(void) )
 {
     int pid;
     if ( (pid = fork()) < 0 )

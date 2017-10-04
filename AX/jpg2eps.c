@@ -876,7 +876,7 @@ int jpg2eps(char *filename_jpg, char *filename_eps, char *options)
     if ((image.fp = fopen(image.filename, READMODE)) == NULL)
     {
         fprintf(stderr, "Error: couldn't read JPEG file '%s'!\n", 
-                image.filename),
+                image.filename);
             exit(1);
     }
     JPEGtoPS(&image, outfile);      /* convert JPEG data */
