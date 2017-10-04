@@ -253,8 +253,10 @@ double * schedulelist_const_period
     for (i=0; i<q->n; i++)
         if (fabs(ti - q->s[2*i]) < SCHEDULE_TIME_TINY) break;
         else if (ti < q->s[2*i])
+        {
             if (i==0) break;
             else {i--; break;}
+        }
     if (ti < q->s[2*0]) bound[0] = ti;
     else /* search left for lower bounds */
         for (k=i; k>=0; k--)
@@ -263,8 +265,10 @@ double * schedulelist_const_period
     for (j=q->n-1; j>=0; j--)
         if (fabs(tf - q->s[2*j]) < SCHEDULE_TIME_TINY) break;
         else if (tf > q->s[2*j])
+        {
             if (j==q->n-1) break;
             else {j++; break;}
+        }
     if (tf > q->s[2*(q->n-1)]) bound[1] = tf;
     else /* search right for upper bounds */
         for (k=j; k<q->n; k++)
