@@ -22,7 +22,7 @@
 /** Timer.c: **/
 
 /* Return a string like "Wed Jun 30 21:49:08 1993" */
-char *date_string();
+char *date_string(void);
 
 extern struct timeval TIMER;
 /* seconds (double) since Jan 1, 1970. More accurate than time() */
@@ -178,7 +178,7 @@ double * schedule_const_period (char token[], double t1, double t2);
 void schedule_kill (char token[]);
 
 /* kill all currently registered schedules */
-void schedule_kill_all();
+void schedule_kill_all(void);
 
 
 /*******************************/

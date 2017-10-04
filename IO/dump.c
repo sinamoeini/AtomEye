@@ -211,7 +211,7 @@ void fDump (FILE *fp, char *linefmt, int minline, int maxline, void *A,
 	}  /* loop over inert beginnings */
 	if ( (i >= minline) && unprinted )
 	{
-	    snprintf(r, &buf[maxchar]-r+1, inert);
+        snprintf(r, &buf[maxchar]-r+1, "%s", inert);
 	    fprintf(fp, "%s\n", buf+minchar);
 	}
     }  /* loop over line number i */

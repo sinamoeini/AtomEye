@@ -596,7 +596,7 @@ extern char CONFIG_auxiliary_name[CONFIG_MAX_AUXILIARY][TERMSIZE];
 extern char CONFIG_auxiliary_unit[CONFIG_MAX_AUXILIARY][TERMSIZE];
 
 /* Free all auxiliary properties */
-void Config_free_auxiliary();
+void Config_free_auxiliary(void);
 
 /* Load atomistic configuration from Ju Li's CFG ASCII file */
 void Config_load (char *fname, FILE *info, Alib_Declare_Config);

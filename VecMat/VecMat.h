@@ -277,7 +277,7 @@ void IAPPEND (int idx[], int list[], int value, int i, int min, int max);
 
 double *Mmem (size_t size_in_dbles);
 void Mfree (double *ptr);
-void Mfreeall();
+void Mfreeall(void);
 /* clone an array of size_in_dbles using Mmem() memory */
 double *Mclone (double *ptr, size_t size_in_dbles);
 /* remember to free it later with Mfree() */
@@ -332,7 +332,7 @@ double *Vrealloc (double *a, int n);
 
 double *Vmem (size_t size_in_dbles);
 void Vfree (double *ptr);
-void Vfreeall();
+void Vfreeall(void);
 /* clone an array of size_in_dbles using Vmem() memory */
 double *Vclone (double *ptr, size_t size_in_dbles);
 /* remember to free it later with Vfree() */

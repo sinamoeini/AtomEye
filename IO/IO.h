@@ -31,7 +31,7 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include <glob.h>
-extern char *xmalloc ();
+extern char *xmalloc (void);
 
 /* IO is the base of all Ju Li's C performance libraries */
 #define JLCPL_TITLE "C performance libraries"
@@ -426,7 +426,7 @@ int Fstat (char filename[]);
 #define Fexecutable(filename) (access(filename,X_OK)>=0)
 
 /* Return current umask */
-mode_t Umask();
+mode_t Umask(void);
 
 /* For UNIX systems */
 #define DIRECTORY_SEPARATOR                 '/'
@@ -707,7 +707,7 @@ int Afprintf (FILE *fp, int cols, int rows, char *fmt, void *A);
 #define Aprint(rows,fmt,A) Afprintf(stdout,TERMCHAR,rows,fmt,(void *)(A))
 
 /* fork out a child process running slave_work_till_die() */
-void spinoff( void (*slave_work_till_die)() );
+void spinoff( void (*slave_work_till_die)(void) );
 
 /* base64 encoding map */
 extern char Base64Alphabet[64];
@@ -763,7 +763,7 @@ char *IOClone (char *str);
 
 char *IOmem (size_t size_in_chars);
 void IOfree (char *ptr);
-void IOfreeall ();
+void IOfreeall (void);
 /* clone a string using IOmem() memory. Remember to free it with IOfree()! */
 char *IOclone (char *str);
 
@@ -794,10 +794,10 @@ extern char scratch_buffer [SCRATCH_BUFFER_SIZE];
 /* subsequent calls, previous data are discarded and the    */
 /* stream is back to SEEK_SET. When kill_scratch() called   */
 /* or process terminates, there would be nothing on disk.   */
-void reset_scratch();
+void reset_scratch(void);
 
 /* free fp_scratch: as if reset_scratch() was never called */
-void kill_scratch();
+void kill_scratch(void);
 
 /* shorthand for fprintf (fp_scratch, ..) */
 void scratch (char *format, ...);
@@ -1194,7 +1194,7 @@ void Bfwrite (FILE *out, char *c, int length_in_bytes);
   defined(_DarwinIntel386)
 
 /* calling Linux procps command "ps m": */
-long memusage();
+long memusage(void);
 
 #else
 

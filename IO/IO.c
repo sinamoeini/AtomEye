@@ -1341,7 +1341,7 @@ int Asprintf (char c[], int cols, int rows, char *fmt, void *A)
         } /* loop over inert beginnings */
         snprintf(r, &crd(i,cols)-r+1, inert);
         while (*r != EOS) r++;
-        if ( r - &crd(i,0) > width )  width = r - &crd(i,0);
+        if ( (int)(r - &crd(i,0)) > width )  width = (int)(r - &crd(i,0));
     } /* loop over row number i */
     for (i=0; i<rows; i++)
     {

@@ -780,7 +780,7 @@ int AX_save_pixmap_as_png (int iw, int compression_level,
     AX_C( free(palette), free(buffer), free(buffer) );
     free(row_pointers);
     png_destroy_write_struct(&png_ptr, (png_infopp)NULL);
-    i = ftell(fp);
+    i = (int)ftell(fp);
     fclose(fp);
     return(i);
 } /* end AX_save_pixmap_as_png() */

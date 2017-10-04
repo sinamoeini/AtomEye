@@ -186,10 +186,10 @@ void evaluate_shear_strain (double **shear_strain);
 bool change_shear_strain_subtract_mean (int iw);
 void evaluate_central_symm (double **central_symm);
 bool change_central_symm_neighbormax (int iw);
-void geo_clear_has_evaluated_flags();
+void geo_clear_has_evaluated_flags(void);
 void geo_set_should_evaluate_flag (int i);
-void evaluate_geo_measures();
-void evaluate_geo_measures();
+void evaluate_geo_measures(void);
+void evaluate_geo_measures(void);
 
 /* utils.c: */
 AX_3D_Lines *plane_wireframe
@@ -238,8 +238,8 @@ bool xtal_origin_goto (int iw);
 bool xtal_origin_zero (int iw);
 
 /* info.c: */
-void evaluate_shear_strain();
-void print_coordination_histogram();
+//void evaluate_shear_strain(void);
+void print_coordination_histogram(void);
 bool print_atom (int iw, int i);
 bool find_atom (int iw);
 bool print_bond (int iw, int k);
@@ -278,8 +278,8 @@ extern int ComputeLeastSquareStrain;
 extern IsoAtomicReference ref[1];
 extern char ref_fbasename[MAX_FILENAME_SIZE];
 /* Free the auxiliary properties based on least-square strain */
-void LeastSquareStrain_Free();
+void LeastSquareStrain_Free(void);
 /* Append least-square strain as auxiliary properties */
-void LeastSquareStrain_Append();
+void LeastSquareStrain_Append(void);
 
 #endif
