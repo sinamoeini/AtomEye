@@ -562,11 +562,13 @@ int try_to_runbg (int n_commands, char *commands[], char *arg);
 int TRY_to_runbg (char *arg, ...);
 #define TRY_TO_RUNBG(command,arg) try_to_runbg(arg,command,NULL);
 
+#define TMPNAM(a) P_tmpdir"IO"
+/*
 #ifndef _HPUX
 #define TMPNAM(a) tmpnam(a)
 #else
 #define TMPNAM(a) P_tmpdir"IO"
-#endif
+#endif*/
 
 /****************************************************************/
 /* Check if the file is in GZIP format: if it is, decompress it */
