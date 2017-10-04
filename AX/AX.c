@@ -898,7 +898,7 @@ int AX_save_pixmap_as_jpg (int iw, int quality, char *file_name)
     } );
     free(row_pointer[0]);
     jpeg_finish_compress(&cinfo);
-    i = ftell(outfile);
+    i = (int)ftell(outfile);
     fclose(outfile);
     jpeg_destroy_compress(&cinfo);
     return(i);
