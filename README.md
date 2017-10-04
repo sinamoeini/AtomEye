@@ -6,13 +6,14 @@
 
 [Gallery](gallery.html) | [Features](#features) | [File formats](#formats) | [Manual](#manual) | [Mac Keybinding](#MacKeybinding) | [Download](#download) | [Utilities](utils.html) | [FAQ](#FAQ) | [Bug report](#bugreport) | [History](#history)
 
+</p>
 <font color="red">Heavy users should try the parallelized [AtomEye version 3 (2012)](../A3/A3.html), with scripting capability.</font>
 
 AtomEye will always be free. Please [cite](http://scholar.google.com/scholar?cites=6489407935302268968)
 [J. Li, _Modelling Simul. Mater. Sci. Eng._ **11** (2003) 173](Doc/Li03a.pdf)
 if you use figures and movies produced by AtomEye, so your colleagues may know about this free tool. Thanks.
 
-</p>
+
 
 * * *
 
