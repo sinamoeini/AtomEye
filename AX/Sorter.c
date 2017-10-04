@@ -641,7 +641,7 @@ void AX_msort_Ju (int N, AX_Float x[], int idx[], int option)
     if (option==AX_USE_NEW_IDX) AX_Sequentially_index (N, idx);
     for ( a = idx; a < idx+N/BASIC*BASIC; a+=BASIC ) fastsort256 (x, a);
     /* mop up the rest with a reasonable sorter */
-    if (a != idx+N) AX_qsort_numerical_recipes(idx+N-a, x, a, AX_USE_OLD_IDX);
+    if (a != idx+N) AX_qsort_numerical_recipes(N % BASIC, x, a, AX_USE_OLD_IDX);
     cell = BASIC;
     while ( cell < N )
     {

@@ -3097,7 +3097,7 @@ void AX_3D_Cylinders_Zdet (int iw, AX_3D_Cylinders *C)
         }
         else break;
     }
-    C->n_power = power - C->power;
+    C->n_power = (int) (power - C->power);
     REALLOC(AX_3D_Cylinders_Zdet, C->power, C->n_power, AX_3D_Cylinder_Power);
     REALLOC(AX_3D_Cylinders_Zdet, C->cylinder, C->n_power, AX_3D_Cylinder *);
     REALLOC(AX_3D_Cylinders_Zdet, C->idx, C->n_power, int);
