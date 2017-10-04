@@ -430,9 +430,9 @@ int AX_openwindow
             ( AX_visual[iw]->class == TrueColor );
         if ( AX_noneedcolormap )
         {
-            AX_rmask = AX_visual[iw] -> red_mask;
-            AX_gmask = AX_visual[iw] -> green_mask;
-            AX_bmask = AX_visual[iw] -> blue_mask;
+            AX_rmask = (int) AX_visual[iw] -> red_mask;
+            AX_gmask = (int) AX_visual[iw] -> green_mask;
+            AX_bmask = (int) AX_visual[iw] -> blue_mask;
         }
 
 #ifdef _AX_USE_SHM
