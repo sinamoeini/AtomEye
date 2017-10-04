@@ -2,6 +2,8 @@
 # AtomEye: atomistic configuration viewer
 
 <p align="center">
+
+
 [Gallery](gallery.html) | [Features](#features) | [File formats](#formats) | [Manual](#manual) | [Mac Keybinding](#MacKeybinding) | [Download](#download) | [Utilities](utils.html) | [FAQ](#FAQ) | [Bug report](#bugreport) | [History](#history)
 
 <font color="red">Heavy users should try the parallelized [AtomEye version 3 (2012)](../A3/A3.html), with scripting capability.</font>
