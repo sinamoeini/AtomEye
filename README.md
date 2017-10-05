@@ -111,7 +111,8 @@ Take a look at [SiVacancy.cfg](Gallery/SiVacancy/SiVacancy.cfg). The format cons
 # (optional) basic length-scale: default A = 1.0 [Angstrom]
 </pre>
 
-<pre>H0(1,1) = 32.5856986704313 A
+<pre>
+H0(1,1) = 32.5856986704313 A
 H0(1,2) = 0 A
 H0(1,3) = 0 A
 # (required) this is the supercell's 1st edge, in A
@@ -125,9 +126,8 @@ H0(3,1) = 8.64689152483509e-16 A
 H0(3,2) = 8.64689152483509e-16 A
 H0(3,3) = 32.5856986704313 A
 # (required) this is the supercell's 3rd edge, in A
-</pre>
 
-<pre>Transform(1,1) = 1
+Transform(1,1) = 1
 Transform(1,2) = 0
 Transform(1,3) = 0
 Transform(2,1) = 0
@@ -148,9 +148,9 @@ eta(3,3) = 0
 # (optional) apply additional Lagrangian strain on H0:
 # H = H0 * sqrt(Identity_matrix + 2 * eta);
 # default = zero matrix.
-</pre>
 
-<pre># ENSUING ARE THE ATOMS, EACH ATOM DESCRIBED BY A ROW
+
+# ENSUING ARE THE ATOMS, EACH ATOM DESCRIBED BY A ROW
 # 1st entry is atomic mass in a.m.u.
 # 2nd entry is the chemical symbol (max 2 chars)
 
@@ -164,9 +164,9 @@ eta(3,3) = 0
 # 8th entry is d(s3)/dt in basic rate-scale R
 R = 1.0 [ns^-1]
 # (optional) basic rate-scale: default R = 1.0 [ns^-1]
-</pre>
 
-<pre>28.0855 Si .0208333333333333 .0208333333333333 .0208333333333333 0 0 0
+
+28.0855 Si .0208333333333333 .0208333333333333 .0208333333333333 0 0 0
 28.0855 Si .0625 .0625 .0625 0 0 0
 28.0855 Si .0208333333333333 .104166666666667 .104166666666667 0 0 0
 28.0855 Si .0625 .145833333333333 .145833333333333 0 0 0
