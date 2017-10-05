@@ -40,6 +40,9 @@ void Config_load_from_VASP
     M3MultiplY (a0_in_A / ulength_IN_A, H);
     M3INV (H, HI, tmp[0]);
     FGets(buf, in);
+#ifdef VASP5
+    FGets(buf, in);
+#endif
     *np = 0;
     num_species = 0;
     p = blank_advance(buf);
