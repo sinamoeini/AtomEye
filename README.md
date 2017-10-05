@@ -226,7 +226,8 @@ For AtomEye to know what these auxiliary properties are, so it can provide the c
 
 Lastly, atomic mass and chemical symbol are now assigned on a block-by-block basis. In the above file _all_ atoms would be 1.000000 amu Ar, which is a pseudonym for soap bubble. Apparently this format can save considerable space for monoatomic configuration. When we have binary compounds, we can write,
 
-<pre>28.0855
+<pre>
+28.0855
 Si
 0.005 0.01232 0.5 0 -2.9819 0.79705 2.3326 0.022255 1.5648 0.76808 102.82
 12.011
@@ -256,7 +257,8 @@ C
 
 Sometime it is more convenient to have the auxiliary properties in a stand-alone '.aux' file, which can be patched to the current application on-demand (press 'F11'). This file should look like,
 
-<pre>102.54352   3.781
+<pre>
+102.54352   3.781
 -54.324521 -9.035
 22.870594   0.785
 -9.8543543  6.834
@@ -279,7 +281,9 @@ where each line contains the property values for one atom, and the total number 
 
 #### Usage:
 
-</a>[Download](#download) binary from browser and save as A
+</a>
+
+[Download](#download) binary from browser and save as A
 
 *   % chmod 755 A
 *   % ./A filename
