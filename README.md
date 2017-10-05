@@ -107,8 +107,6 @@ Take a look at [SiVacancy.cfg](Gallery/SiVacancy/SiVacancy.cfg). The format cons
 Number of particles = 1727
 # (required) this must be the first line
 
-
-<pre>
 A = 1.0 Angstrom (basic length-scale)
 # (optional) basic length-scale: default A = 1.0 [Angstrom]
 
