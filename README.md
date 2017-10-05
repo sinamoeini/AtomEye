@@ -221,6 +221,7 @@ Ar
 ....
 </pre>
 
+
 In above, 'entry_count = 11' means there are 11 entries per row for an atom. To omit velocity data in rows, write '.NO_VELOCITY.' line before the 'entry_count = 11' line. In this case because 11=3+8, we must have 8 so-called _auxiliary properties_ per atom. If on the other hand '.NO_VELOCITY.' does not appear before 'entry_count = 11', then the velocities (ds[]/dt in R) will be specified after s[] in each row, and since 11=3+3+5, we will have only 5 auxiliary properties.
 
 For AtomEye to know what these auxiliary properties are, so it can provide the correct help information, one should also fill in 'auxiliary[i] = name [unitname]' lines, where 'i' runs from 0 to 8-1=7 here, 'name' is a single word for the property's name, and unitname is the name of the unit in which the values are given. For example, 'auxiliary[3] = mises [GPa]' would mean that the _fourth_ auxiliary property, which is the 7th column (or the 10th column if '.NO_VELOCITY.' clause is not given), are the von Mises stress invariants in GPa.
