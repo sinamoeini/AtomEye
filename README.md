@@ -102,16 +102,16 @@ The shortcoming of the standard CFG format is its lack of extensibility, and the
 
 Take a look at [SiVacancy.cfg](Gallery/SiVacancy/SiVacancy.cfg). The format consists of system specifications and atom specifications. The system specifications are of the form 'tagname = value units', where 'tagname' and 'units' are fixed, and 'value' needs to be filled in. Some tagnames are _required_, such as 'Number of particles', 'H0(1,1)' to 'H0(3,3)'. Some are optional, such as 'A', 'eta(1,1)', 'R'. A line starting with '#' is comment. Here the comments explain the tags immediately above, which is a good habit.<a name="standard_CFG_example"></a>
 
-<pre><a name="standard_CFG_example">Number of particles = 1727
-# (required) this must be the first line</a> </pre>
+<pre>
 
-<a name="standard_CFG_example">
+Number of particles = 1727
+# (required) this must be the first line
 
-<pre>A = 1.0 Angstrom (basic length-scale)
-# (optional) basic length-scale: default A = 1.0 [Angstrom]
-</pre>
 
 <pre>
+A = 1.0 Angstrom (basic length-scale)
+# (optional) basic length-scale: default A = 1.0 [Angstrom]
+
 H0(1,1) = 32.5856986704313 A
 H0(1,2) = 0 A
 H0(1,3) = 0 A
@@ -165,7 +165,6 @@ eta(3,3) = 0
 R = 1.0 [ns^-1]
 # (optional) basic rate-scale: default R = 1.0 [ns^-1]
 
-
 28.0855 Si .0208333333333333 .0208333333333333 .0208333333333333 0 0 0
 28.0855 Si .0625 .0625 .0625 0 0 0
 28.0855 Si .0208333333333333 .104166666666667 .104166666666667 0 0 0
@@ -183,9 +182,9 @@ y  =  s1 * H(1,2)  +  s2 * H(2,2)  +  s3 * H(3,2)
 z  =  s1 * H(1,3)  +  s2 * H(2,3)  +  s3 * H(3,3)
 </pre>
 
-</a>
 
-<a name="standard_CFG_example">'A', 'R' are the lengthscale and ratescale of H0[][] and ds[]/dt, respectively, which by default take the values Angstrom and nanosecond^-1\. They can be altered to manually dilate or heat up the system. 'eta[][]' is the optional Lagrangian strain which is 0 by default, using which we can apply an additional deformation on H0[][] to get the actual box shape H[][]. These are amenities that entry-level users can do without.</a><a name="extended_CFG"></a>
+
+'A', 'R' are the lengthscale and ratescale of H0[][] and ds[]/dt, respectively, which by default take the values Angstrom and nanosecond^-1\. They can be altered to manually dilate or heat up the system. 'eta[][]' is the optional Lagrangian strain which is 0 by default, using which we can apply an additional deformation on H0[][] to get the actual box shape H[][]. These are amenities that entry-level users can do without.
 
 #### <a name="extended_CFG">Extended CFG format</a>
 
