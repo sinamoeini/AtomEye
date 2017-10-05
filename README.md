@@ -93,13 +93,10 @@ A configuration file is considered to be in PDB format if there is '.pdb' or '.P
 
 #### <a name="standard_CFG">Standard CFG format</a>
 
-<a name="standard_CFG">
 
 The standard CFG format ensures seamless transition and _complete_ information passage from one MD simulation to the other. Thus particle velocities _must_ be specified, and floating-point numbers are usually saved to the 16th significant digit. Aside from an atom's position and velocity, properties such as the local energy are deemed potential-dependent and therefore cannot be specified in the standard format.
 
 The shortcoming of the standard CFG format is its lack of extensibility, and the filesize tends to be noticeably larger for very large configurations (>200K atoms).
-
-</a>
 
 <a name="standard_CFG">Standard CFG examples:</a> [SiVacancy.cfg](Gallery/SiVacancy/SiVacancy.cfg) | [Si_screw_dipole.cfg](Gallery/Si_screw_dipole/Si_screw_dipole.cfg) | [Cu_NanoXtal.cfg.bz2](Gallery/Cu_NanoXtal/Cu_NanoXtal.cfg.bz2)
 
@@ -180,7 +177,8 @@ R = 1.0 [ns^-1]
 
 The atom specifications are the rows above, one row for each atom, with the meaning of each column entry explained in the comments. The reduced coordinates s1,s2,s3 should be between 0 and 1\. The Cartesian coordinates of the atoms can be determined from the reduced coordinates as,
 
-<pre> x  =  s1 * H(1,1)  +  s2 * H(2,1)  +  s3 * H(3,1)
+<pre>
+x  =  s1 * H(1,1)  +  s2 * H(2,1)  +  s3 * H(3,1)
 y  =  s1 * H(1,2)  +  s2 * H(2,2)  +  s3 * H(3,2)
 z  =  s1 * H(1,3)  +  s2 * H(2,3)  +  s3 * H(3,3)
 </pre>
