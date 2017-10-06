@@ -178,7 +178,10 @@ void reload_config (int iw, bool term_input_filename)
                     ref_fbasename);
         else LeastSquareStrain_Append();
     }
-
+    if  ( ComputeCNA )
+    {
+        CNA_ListBuild();
+    }
     incompatible_config = (np != old_np) ||
         memcmp(symbol, old_symbol, SYMBOL_SIZE*MIN(np,old_np));
     Free(old_symbol);
@@ -211,6 +214,8 @@ void reload_config (int iw, bool term_input_filename)
         color_encode_auxiliary(iw);
     else if (n[iw].color_mode == COLOR_MODE_SCRATCH)
         scratch_color (iw);
+    else if (n[iw].color_mode == COLOR_MODE_CNA)
+        assign_CNA_color(iw);
     else
     {
         strcpy (AX_title[iw],fbasename);

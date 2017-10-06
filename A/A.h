@@ -282,4 +282,31 @@ void LeastSquareStrain_Free(void);
 /* Append least-square strain as auxiliary properties */
 void LeastSquareStrain_Append(void);
 
+
+
+
+/* CNA.c: */
+#define COLOR_MODE_CNA  5
+#define CNA_OTHER       0
+#define CNA_BCC         1
+#define CNA_HCP         2
+#define CNA_ICOS        3
+#define CNA_FCC         4
+extern short *CNA_pattern;
+extern int ComputeCNA;
+extern int CNA_hist[5];
+void CNA_Free(void);
+void CNA_ListBuild(void);
+bool CNA_CheckBond(int iatom,int jatom);
+bool assign_CNA_color (int iw);
+void print_CNA_histogram(void);
+typedef struct
+{
+    char *name;
+    double r,g,b;
+} Atom_CNA_color;
+extern const Atom_CNA_color ATOM_CNA_COLOR[5];
+
+
+
 #endif

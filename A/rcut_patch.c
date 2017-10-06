@@ -130,6 +130,12 @@ bool apply_rcut_patch (int iw)
                   INW(n[iw].auxiliary_idx-CONFIG_MAX_AUXILIARY,
                       MAX_GEO_MEASURES) )
             color_encode_auxiliary(iw);
+        else if ((n[iw].xtal_mode) && (n[iw].color_mode == COLOR_MODE_CNA))
+        {
+            CNA_Free();
+            CNA_ListBuild();
+            assign_CNA_color(iw);
+        }
         Config_to_3D_Bonds (n[iw].bond_radius);
         if (n[iw].bond_mode)
         {
@@ -152,6 +158,7 @@ void finish_rcut_patch (int iw)
             rcut_patch_pairname, rcut_patch[rcut_patch_item].rcut);
     Sfpr(stdout, "rlist = %M (reduced)\n ", N->rcut, ct->t,ct->t);
     print_coordination_histogram(); cr();
+    if(ComputeCNA) print_CNA_histogram();
     rcut_patching = 0;
     return;
 } /* end finish_rcut_patch() */

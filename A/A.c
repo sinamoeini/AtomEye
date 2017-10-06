@@ -457,22 +457,65 @@ bool treatevent (int iw)
                     change_atom_r_ratio(1./(1+n[iw].delta));
                     return (TRUE);
                 case XK_k:
-                    if (n[iw].color_mode != COLOR_MODE_COORD)
-                    {
-                        if (n[iw].xtal_mode)
+                    if ( AXSHFT(iw) ){
+                        if (n[iw].color_mode != COLOR_MODE_CNA)
                         {
-                            n[iw].last_color_mode = n[iw].color_mode;
-                            return(assign_coordination_color(iw));
+                            if (n[iw].xtal_mode)
+                            {
+                                if (!ComputeCNA) {
+                                    CNA_ListBuild();
+                                    print_CNA_histogram();
+                                }
+                                n[iw].last_color_mode = n[iw].color_mode;
+                                return(assign_CNA_color(iw));
+                            }
+                            else return (FALSE);
+                        }
+                        else if (n[iw].last_color_mode == COLOR_MODE_NORMAL){
+                            n[iw].last_color_mode = COLOR_MODE_CNA;
+                            return(assign_normal_color(iw));
+                        }
+                        else if (n[iw].last_color_mode == COLOR_MODE_COORD){
+                            n[iw].last_color_mode = COLOR_MODE_CNA;
+                            return (assign_coordination_color(iw));
+                        }
+                        else if (n[iw].last_color_mode == COLOR_MODE_AUXILIARY){
+                            n[iw].last_color_mode = COLOR_MODE_CNA;
+                            return(color_encode_auxiliary(iw));
+                        }
+                        else if (n[iw].color_mode == COLOR_MODE_SCRATCH){
+                            n[iw].last_color_mode = COLOR_MODE_CNA;
+                            return(scratch_color(iw));
+                        }
+                        else return (FALSE);
+                    }else{
+                        if (n[iw].color_mode != COLOR_MODE_COORD)
+                        {
+                            if (n[iw].xtal_mode)
+                            {
+                                n[iw].last_color_mode = n[iw].color_mode;
+                                return(assign_coordination_color(iw));
+                            }
+                            else return (FALSE);
+                        }
+                        else if (n[iw].last_color_mode == COLOR_MODE_NORMAL){
+                            n[iw].last_color_mode = COLOR_MODE_COORD;
+                            return(assign_normal_color(iw));
+                        }
+                        else if (n[iw].last_color_mode == COLOR_MODE_CNA){
+                            n[iw].last_color_mode = COLOR_MODE_COORD;
+                            return(assign_CNA_color(iw));
+                        }
+                        else if (n[iw].last_color_mode == COLOR_MODE_AUXILIARY){
+                            n[iw].last_color_mode = COLOR_MODE_COORD;
+                            return(color_encode_auxiliary(iw));
+                        }
+                        else if (n[iw].color_mode == COLOR_MODE_SCRATCH){
+                            n[iw].last_color_mode = COLOR_MODE_COORD;
+                            return(scratch_color(iw));
                         }
                         else return (FALSE);
                     }
-                    else if (n[iw].last_color_mode == COLOR_MODE_NORMAL)
-                        return(assign_normal_color(iw));
-                    else if (n[iw].last_color_mode == COLOR_MODE_AUXILIARY)
-                        return(color_encode_auxiliary(iw));
-                    else if (n[iw].color_mode == COLOR_MODE_SCRATCH)
-                        return(scratch_color(iw));
-                    else return (FALSE);
                 case XK_l:
                     return(assign_normal_color(iw));
                 case XK_o:
