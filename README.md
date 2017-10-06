@@ -348,61 +348,46 @@ Sometimes too much rotation is a bad thing, and you want the viewframe upright a
 
 #### <a name="inquire_atom_info">Inquire Atom Information:</a>
 
-<a name="inquire_atom_info"></a>
+Right click on an atom to display relevant information about it in the xterm. This will also set the [anchor](#anchor_control) to this atom.
 
-<a name="inquire_atom_info">Right click on an atom to display relevant information about it in the xterm. This will also set the</a> [anchor](#anchor_control) to this atom.
-
-Right-clicking on a bond will display information about this bond. This will set the [anchor](#anchor_control) to the bond center.<a name="inquire_geometrical_info"></a>
+Right-clicking on a bond will display information about this bond. This will set the [anchor](#anchor_control) to the bond center.
 
 #### <a name="inquire_geometrical_info">Inquire Geometrical Information:</a>
 
-<a name="inquire_geometrical_info"></a>
-
-<a name="inquire_geometrical_info">AtomEye remembers the last four atoms that you have</a> [clicked on](#inquire_atom_info).
+AtomEye remembers the last four atoms that you have [clicked on](#inquire_atom_info).
 
 *   Pressing ',' (comma) would print out the Cartesian separation and distance between the last two atoms clicked.
 *   Pressing '.' (period) would print out the bond angle between the last three atoms clicked.
 *   Pressing '/' (slash) would print out the dihedral angle between the last four atoms clicked.
 
-<a name="pull_closer_away">
+#### <a name="pull_closer_away">Pull Viewport Closer/Away from the Anchor:</a>
 
-#### Pull Viewport Closer/Away from the Anchor:
-
-</a>
-
-<a name="pull_closer_away">Right click in the window and drag mouse to pull closer. Alternatively, use IMWheel (or Ctrl+IMWheel for quicker action) to pull viewport closer/away from the anchor. If you click on an atom, that atom will automatically become the</a> [anchor](#anchor_control). If you click on a bond, the bond center will also become the [anchor](#anchor_control).<a name="shift_object"></a>
+Right click in the window and drag mouse to pull closer. Alternatively, use IMWheel (or Ctrl+IMWheel for quicker action) to pull viewport closer/away from the anchor. If you click on an atom, that atom will automatically become the [anchor](#anchor_control). If you click on a bond, the bond center will also become the [anchor](#anchor_control).
 
 #### <a name="shift_object">Shift Object (or so you think):</a>
 
-<a name="shift_object"></a>
-
-<a name="shift_object">Ctrl+Left, Ctrl+Right, Ctrl+Up, Ctrl+Down will shift the object in plane. Ctrl+Shift+Up will send the object further from viewport, Ctrl+Shift+Down will pull it closer.</a><a name="changing_gear"></a>
+Ctrl+Left, Ctrl+Right, Ctrl+Up, Ctrl+Down will shift the object in plane. Ctrl+Shift+Up will send the object further from viewport, Ctrl+Shift+Down will pull it closer.
 
 #### <a name="changing_gear">Changing Gearbox Value:</a>
 
-<a name="changing_gear">
-
 Press numeral keys '0' to '9', and the gearbox value will be switched to,
 
-<pre>[1]0.001 [2]0.002 [3]0.005 [4]0.010 [5]0.020
+<pre>
+[1]0.001 [2]0.002 [3]0.005 [4]0.010 [5]0.020
 [6]0.050 [7]0.100 [8]0.200 [9]0.500 [0]0.150
 </pre>
 
-The gearbox value controls all rate of change, such as angle of rotation, amount of translation, the rate of atom radius change, etc.</a><a name="coordination_number_coloring">
+The gearbox value controls all rate of change, such as angle of rotation, amount of translation, the rate of atom radius change, etc.
 
-#### Coordination Number Coloring:
+#### <a name="coordination_number_coloring">Coordination Number Coloring:</a>
 
-</a>
-
-<a name="coordination_number_coloring">Press 'k' to toggle coordination number coloring. Coordination number is an empirical measure of how many nearest neighbors (could be of various species) there are for a particular atom. The definition of "nearest neighbors" can be changed by</a> [cutoff control](#cutoff_control).
+Press 'k' to toggle coordination number coloring. Coordination number is an empirical measure of how many nearest neighbors (could be of various species) there are for a particular atom. The definition of "nearest neighbors" can be changed by [cutoff control](#cutoff_control).
 
 To clearly see defect cores, you often need to remove the perfectly coordinated atoms. This is done in [Make Atoms Invisible](#make_atoms_invisible).<a name="shear_strain_coloring"></a>
 
 #### <a name="shear_strain_coloring">Atomistic Local von Mises Shear Strain Invariant Coloring:</a>
 
-<a name="shear_strain_coloring"></a>
-
-<a name="shear_strain_coloring"></a>[Meta](#Meta)+g will color-encode the atoms according to their [local von Mises shear strain invariant](Doc/vonMisesInvariant.pdf). Shift+g will toggle the flag controlling whether to subtract off the system-averaged strain tensor or not before computing the invariant; the default is no. The controls of colormap, visibilities etc. are identical to that of [auxiliary properties coloring](#auxiliary_property_coloring).<a name="central_symm_coloring"></a>
+[Meta](#Meta)+g will color-encode the atoms according to their [local von Mises shear strain invariant](Doc/vonMisesInvariant.pdf). Shift+g will toggle the flag controlling whether to subtract off the system-averaged strain tensor or not before computing the invariant; the default is no. The controls of colormap, visibilities etc. are identical to that of [auxiliary properties coloring](#auxiliary_property_coloring).
 
 #### <a name="central_symm_coloring">Central Symmetry Parameter Coloring:</a>
 
