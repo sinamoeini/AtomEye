@@ -799,7 +799,7 @@ void thread_start (void *icopy)
         n[iw].ly = AX_win_y[iw] / 2;
         n[iw].last_button_press_time = -HUGE_INT;
         n[iw].anchor = -1;
-        for (i=0; i<=ATOM_STACK_SIZE; i++) n[iw].atom_stack[i] = -1;
+        for (i=0; i<ATOM_STACK_SIZE; i++) n[iw].atom_stack[i] = -1;
         V3EQV (cm, n[iw].hook);
         n[iw].suppress_printout = FALSE;
         n[iw].delta = gearbox[0];
