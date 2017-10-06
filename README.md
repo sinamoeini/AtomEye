@@ -71,7 +71,8 @@ PDB examples:    [DNA.pdb](Gallery/DNA/DNA.pdb) | [Nanotube8x3x1.pdb](Gallery/
 
 In order to enforce periodic boundary condition (PBC) behavior in AtomEye, one must insert the following two lines at the beginning of the file:
 
-<pre>HEADER  500 MUST_PBC
+<pre>
+HEADER  500 MUST_PBC
 CRYST1   13.303   37.627    7.681  60.00  70.00  80.00 P 1           1
 </pre>
 
@@ -100,7 +101,6 @@ Standard CFG examples: [SiVacancy.cfg](Gallery/SiVacancy/SiVacancy.cfg) | [Si_sc
 Take a look at [SiVacancy.cfg](Gallery/SiVacancy/SiVacancy.cfg). The format consists of system specifications and atom specifications. The system specifications are of the form 'tagname = value units', where 'tagname' and 'units' are fixed, and 'value' needs to be filled in. Some tagnames are _required_, such as 'Number of particles', 'H0(1,1)' to 'H0(3,3)'. Some are optional, such as 'A', 'eta(1,1)', 'R'. A line starting with '#' is comment. Here the comments explain the tags immediately above, which is a good habit.<a name="standard_CFG_example"></a>
 
 <pre>
-
 Number of particles = 1727
 # (required) this must be the first line
 
@@ -187,7 +187,8 @@ Extended CFG examples: [BubbleRaftBefore.cfg](Gallery/BubbleRaft/BubbleRaftBefor
 
 Extended CFG format addresses the problem of filesize and extensibility. Velocity data is no longer required for the atoms, and floating-point precision can be what one sees fit for the application instead of the recommended 16 significant digits in case of the standard CFG format. Also, atomic mass and chemical symbol are now assigned on a block-by-block basis instead of on an atom-by-atom basis. All standard CFG system tags are still valid in the extended CFG format, with addition of the 'entry_count' keyword, whose appearance determines whether this is standard or extended CFG format.
 
-<pre>Number of particles = 16200
+<pre>
+Number of particles = 16200
 A = 4.37576470588235 Angstrom (basic length-scale)
 H0(1,1) = 127.5 A
 H0(1,2) = 0 A
@@ -238,7 +239,8 @@ C
 
 which takes up no more space than the standard CFG format under UNIX. Of course a space-saving way is to write the above as,
 
-<pre>28.0855
+<pre>
+28.0855
 Si
 0.005 0.01232 0.5 0 -2.9819 0.79705 2.3326 0.022255 1.5648 0.76808 102.82
 0.31833 0.01232 0.5 0 -2.9787 0.84615 2.4817 0.45222 1.6639 0.93449 103.02
@@ -394,7 +396,8 @@ Because calculating the central symmetry parameters requires a [neighborlist](Do
 
 To use, you need to load in a configuration first, and then press 'Esc' key. This would _imprint_ the present coordinates as the reference. Any configuration you [load](#load_new_config) or [step](#step_config) afterward would automatically trigger local strain calculations, the results of which are appended as [auxiliary properties](#auxiliary_property_coloring). Right-click on an atom to see the full local transformation matrix J, defined as
 
-<pre> dx_{ij}(now)  \approx   dx_{ij}(reference) J
+<pre>
+dx_{ij}(now)  \approx   dx_{ij}(reference) J
 </pre>
 
 where dx's are row vectors, and j are i's [nearest neighbors](#cutoff_control) (in the present configuration, as we don't want to store two neighborlists).
@@ -423,31 +426,36 @@ One can assign arbitrary colors and radii to atoms and bonds by putting a '.usr'
 
 A 6-numbers line like
 
-<pre>0 3  0 1 0  0.2
+<pre>
+0 3  0 1 0  0.2
 </pre>
 
 would mean drawing a bond between atom 0 and atom 3, with bond color "0 1 0" and radius 0.2\. Note that atom index in AtomEye starts from 0 as in C language convention (that is, the first atom in the cfg file has index 0).
 
 A 5-numbers line like
 
-<pre>2  0 1 0  0.7
+<pre>
+2  0 1 0  0.7
 </pre>
 
 would mean drawing atom 2 with color "0 1 0" and radius 0.7
 
 A 1-number line
 
-<pre>0.7
+<pre>
+0.7
 </pre>
 
 or a 3-numbers line
 
-<pre>0 1 0
+<pre>
+0 1 0
 </pre>
 
 or a 4-numbers line
 
-<pre>0 1 0  0.7
+<pre>
+0 1 0  0.7
 </pre>
 
 would mean drawing atom _m_ with radius 0.7 (with default color), color "0 1 0" (with default radius), or color "0 1 0" and radius 0.7, respectively. _m_ will be automatically accumulated, starting from 0.
@@ -473,7 +481,8 @@ The coloring of bonds can be restored to normal values with invisibilities remov
 
 Ctrl+Shift+Left-click will prompt the user to change the RGB color and/or radius of atoms of a certain chemical species, as follows:
 
-<pre>Change color [radius] of type-3 ("P") atoms (0.100 0.700 0.300 [1.060]):
+<pre>
+Change color [radius] of type-3 ("P") atoms (0.100 0.700 0.300 [1.060]):
 </pre>
 
 The first three numbers are the RGB values of [Phosphorus](http://www.webelements.com/webelements/elements/text/P/key.html). The last number in the square bracket is its radius (currently taken to be the [charge radius](http://www.fhi-berlin.mpg.de/th/balsac/balm.47.html), another alternative is the [empirical atomic radius](http://www.webelements.com/webelements/properties/text/definitions/atomic-radius-emp.html)) in Angstrom. The rendered radius is the above scaled by a common factor ([scale atom radii](#scale_atom_radii)).
@@ -490,7 +499,8 @@ The coloring of atoms can be restored to normal values (of chemical species) wit
 
 When CapsLock is at On or [Meta](#Meta) key is pressed, left-clicking on a particular bond will prompt the user to change the RGB color and/or radius of the particular bond, as follows:
 
-<pre>Change color [radius] of bond-1726 (0.493 0.493 0.561 [0.250]):
+<pre>
+Change color [radius] of bond-1726 (0.493 0.493 0.561 [0.250]):
 </pre>
 
 The first three numbers are the RGB values of the bond. The last number in the square bracket is its radius in Angstrom.
@@ -513,7 +523,8 @@ Press 'z' to recover the initial PBC state, where there is no shift.
 
 Press 'd', xterm will pop out with inquiry,
 
-<pre>Change background color (0.000 0.000 0.000):
+<pre>
+Change background color (0.000 0.000 0.000):
 </pre>
 
 and you should input three real numbers from 0 to 1 for the RGB values. If you press Return, the numbers in the brackets will be taken as the input. They are just the current background colors, so nothing will change.
@@ -642,7 +653,8 @@ Your favorite MD or conjugate gradient code can then load in this "FCC10x10x10.i
 1. One must first have a sequence of configuration files, say "00001.cfg", "00002.cfg", ..., "00005.cfg". (a sample program [sequence.f](sequence.f) shows how to do it in FORTRAN).
 2. AtomEye can render a series of .[jpg](#making_jpg), .[png](#making_png), or .[eps](#making_eps) images according to a script (default name = "scr_anim"), which looks like:
 
-<pre>90
+<pre>
+90
 00001.cfg Pic/00001.jpg
 00002.cfg Pic/00002.jpg
 00003.cfg Pic/00003.jpg
@@ -704,7 +716,8 @@ Some environments forbid the use of Meta or Alt key. In those cases, having Caps
 
 **Answer**: Try adding
 
-<pre>export XLIB_SKIP_ARGB_VISUALS=1
+<pre>
+export XLIB_SKIP_ARGB_VISUALS=1
 </pre>
 
 to your .bashrc file.
@@ -716,10 +729,14 @@ to your .bashrc file.
 
 3. I encounter the following error message:
 
-<pre>ATOM_COORDINATION_MAX = 24 exceeded</pre>
+<pre>
+ATOM_COORDINATION_MAX = 24 exceeded
+</pre>
 
 or
-<pre>error: Imakespace: min=0 max=2744 jammed between i=1262 and i+1.</pre>
+<pre>
+error: Imakespace: min=0 max=2744 jammed between i=1262 and i+1.
+</pre>
 
 and AtomEye quits. What's the problem?
 
@@ -729,7 +746,8 @@ and AtomEye quits. What's the problem?
 
 To see what is in the configuration, artificially scale up your supercell 10 times by adding [one optional line](#standard_CFG_example) after the 'Number of particles = ' line:
 
-<pre>A = 10 Angstrom (basic length-scale)
+<pre>
+A = 10 Angstrom (basic length-scale)
 </pre>
 
 Most likely this would reduce all atoms to coordination-0\. But at least you can now load your configuration into AtomEye, see the atoms, and debug the configuration.
