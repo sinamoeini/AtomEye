@@ -308,63 +308,43 @@ It can be foreseen that when the configuration is large, it is much more efficie
 
 #### <a name="anchor_control">Anchor Control:</a>
 
-<a name="anchor_control">
-
 At the start of a session, the anchor is taken to be the center of the box, so the object appears to be hinged at the box center if rotated. This state can be recovered whenever 'w' is pressed.
 
 On the other hand, right-clicking on an atom transfers the anchor to that atom's position. This allows a streamlined right click + drag action that pulls the viewport closer to any atom you want to see in detail. Also, once you right-clicked on an atom, ensuing rotations will be hinged on that atom, which is convenient for studying local atomic arrangements.
 
-</a>
+If you are in the [bond mode](#toggle_bond_mode), then right-clicking on a bond will also set the anchor position to the bond center.
 
-<a name="anchor_control">If you are in the</a> [bond mode](#toggle_bond_mode), then right-clicking on a bond will also set the anchor position to the bond center.
-
-Press 'a' to shift the viewport so the anchor is seen right at the middle of the viewport.<a name="toggle_bond_mode"></a>
+Press 'a' to shift the viewport so the anchor is seen right at the middle of the viewport.
 
 #### <a name="toggle_bond_mode">Toggle Bond Mode:</a>
 
-<a name="toggle_bond_mode"></a>
-
-<a name="toggle_bond_mode">Press 'b' to toggle whether to draw bonds or not. To change the bonding cutoff between two species of atoms, visit</a> [Cutoff Control](#cutoff_control).<a name="toggle_perspective"></a>
+Press 'b' to toggle whether to draw bonds or not. To change the bonding cutoff between two species of atoms, visit [Cutoff Control](#cutoff_control).
 
 #### <a name="toggle_perspective">Toggle Between Parallel / Perspective Projection:</a>
 
-<a name="toggle_perspective"></a>
-
-<a name="toggle_perspective">Press 'Tab' to toggle between parallel and perspective projection rendering methods. Parallel projection is a limiting case of perspective projection, where the viewpoint is very far away from the object but the</a> [view angle](#change_total_view_angle) is also turned very small. It is useful for discerning atomic rows and planes.<a name="scale_atom_radii"></a>
+Press 'Tab' to toggle between parallel and perspective projection rendering methods. Parallel projection is a limiting case of perspective projection, where the viewpoint is very far away from the object but the [view angle](#change_total_view_angle) is also turned very small. It is useful for discerning atomic rows and planes.
 
 #### <a name="scale_atom_radii">Scale Atom Radii:</a>
 
-<a name="scale_atom_radii"></a>
-
-<a name="scale_atom_radii">Press '</a>[PageUp](#PageUp)' to increase atom radii and '[PageDown](#PageDown)' to decrease atom radii rendered on screen by a common factor. The rate of change is controlled by the [gearbox](#changing_gear).<a name="change_bond_radius"></a>
+Press '[PageUp](#PageUp)' to increase atom radii and '[PageDown](#PageDown)' to decrease atom radii rendered on screen by a common factor. The rate of change is controlled by the [gearbox](#changing_gear).
 
 #### <a name="change_bond_radius">Change Bond Radius:</a>
 
-<a name="change_bond_radius"></a>
-
-<a name="change_bond_radius">Press 'Home' to increase bond radius and 'End' to decrease bond radius drawn on the screen. The rate of change is controlled by the</a> [gearbox](#changing_gear).<a name="toggle_wireframe_mode"></a>
+Press 'Home' to increase bond radius and 'End' to decrease bond radius drawn on the screen. The rate of change is controlled by the [gearbox](#changing_gear).
 
 #### <a name="toggle_wireframe_mode">Toggle Wireframe Mode:</a>
 
-<a name="toggle_wireframe_mode"></a>
-
-<a name="toggle_wireframe_mode">Press 'i' to toggle wireframe mode that determines how to render the PBC box. You have the freedom to select no wireframe, monochromatic wireframe, RGB wireframe, and so on. In the case of the RGB wireframe, the three axes correspond to (s1,0,0), (0,s2,0), (0,0,s3), respectively; the point they meet corresponds to the origin (0,0,0).</a><a name="cutoff_control"></a>
+Press 'i' to toggle wireframe mode that determines how to render the PBC box. You have the freedom to select no wireframe, monochromatic wireframe, RGB wireframe, and so on. In the case of the RGB wireframe, the three axes correspond to (s1,0,0), (0,s2,0), (0,0,s3), respectively; the point they meet corresponds to the origin (0,0,0).
 
 #### <a name="cutoff_control">Cutoff Control:</a>
 
-<a name="cutoff_control">
-
 Press 'r' for cutoff control, which decides how close two atoms need to be with each other to be considered nearest neighbor (if they are, then each atom's coordination number will be increased by 1, and a bond will be drawn between them if under the bond mode).
 
-</a>
-
-<a name="cutoff_control">You will be first inquired about which two species. For example, if you want to change the cutoff distance between silicon and carbon, then you should enter "Si C" and press enter. Then, with each Ctrl+Home/Ctrl+End, the cutoff distance will be increased/decreased; the rate of change is controlled by the</a> [gearbox](#changing_gear). When you are satisfied, you should press 'r' again to close the change, so you can't modify two pairing types at the same time.<a name="upright_viewframe"></a>
+You will be first inquired about which two species. For example, if you want to change the cutoff distance between silicon and carbon, then you should enter "Si C" and press enter. Then, with each Ctrl+Home/Ctrl+End, the cutoff distance will be increased/decreased; the rate of change is controlled by the [gearbox](#changing_gear). When you are satisfied, you should press 'r' again to close the change, so you can't modify two pairing types at the same time.
 
 #### <a name="upright_viewframe">Make Viewframe Upright:</a>
 
-<a name="upright_viewframe"></a>
-
-<a name="upright_viewframe">Sometimes too much rotation is a bad thing, and you want the viewframe upright again just like at the beginning. Press 'u'.</a><a name="inquire_atom_info"></a>
+Sometimes too much rotation is a bad thing, and you want the viewframe upright again just like at the beginning. Press 'u'.
 
 #### <a name="inquire_atom_info">Inquire Atom Information:</a>
 
