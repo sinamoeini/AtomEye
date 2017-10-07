@@ -6,7 +6,7 @@ AM_CFLAGS = -I$(top_srcdir)/VecMat3 -I$(top_srcdir)/VecMat -I$(top_srcdir)/IO -I
 
 
 
-generic_LDADD = libAtoms.a $(top_srcdir)/VecMat3/libVecMat3.a $(top_srcdir)/VecMat/libVecMat.a $(top_srcdir)/Scalar/libScalar.a $(top_srcdir)/IO/libIO.a $(top_srcdir)/Timer/libTimer.a -lreadline -lncurses -lXpm -lXext -lX11 -lxcb -lXau -lpng -lz -ljpeg -lgsl -lgslcblas -llapack -lblas -lgfortran -lm -lpthread -lc  -lm
+generic_LDADD = libAtoms.a $(top_srcdir)/VecMat3/libVecMat3.a $(top_srcdir)/VecMat/libVecMat.a $(top_srcdir)/Scalar/libScalar.a $(top_srcdir)/IO/libIO.a $(top_srcdir)/Timer/libTimer.a
 
 bin_PROGRAMS = mul iniT punchcylinder vcut trans scut voronoirize label_immobile c2p p2c cfg2xyz xtal vasp2cfg vasp2out cfg2vasp chemical_randomize perturb_s perturb_x fch2cfg chg2xsf cfg2dacapo annotate_atomic_strain affine_deform linear_path period_reduce infectH concat div mobilize_all transmute chg_planar_avg
 
